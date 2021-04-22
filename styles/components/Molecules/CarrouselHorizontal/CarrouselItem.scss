@@ -1,13 +1,14 @@
 @import '../../../abstract.scss';
 
 .carrousel-item-container{
-    width: 20vw;
+    min-width: 20vw;
     background-color: blue;
-    border-radius: $border-radius-med;
+    border-radius: $border-radius-md;
     position: relative;
     height: 50vh;
     display: flex;
     flex-direction: column;
+    margin: 0.25rem;
 }
 
 .carrousel-item-image{

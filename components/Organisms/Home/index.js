@@ -1,7 +1,8 @@
 import ContentLoader, { Rect, Circle } from 'react-content-loader'
 import LastPremieres from '../../Molecules/LastPremieres'
 import ActorsBirthdays from '../../Molecules/ActorsBirthdays'
-import Carrousel from '../../Molecules/Carrousel'
+import CarrouselHorizontal from '../../Molecules/CarrouselHorizontal'
+import Banner from '../../Atoms/Banner'
 
 //const Loader = ({className}) =>  <ContentLoader 
 //speed={2}
@@ -23,7 +24,32 @@ const test_items = [{
 },{
     image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
     title: 'SOME TITLE'
+},{
+    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
+    title: 'SOME TITLE'
+},{
+    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
+    title: 'SOME TITLE'
+},{
+    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
+    title: 'SOME TITLE'
+},{
+    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
+    title: 'SOME TITLE'
+},{
+    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
+    title: 'SOME TITLE'
+},{
+    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
+    title: 'SOME TITLE'
 }]
+
+const test_premieres = [
+    {},
+    {},
+    {},
+    {},
+]
 
 export default function Home(){
 
@@ -31,9 +57,18 @@ export default function Home(){
 
     return (
         <div>
-            <LastPremieres className='home-loader-content' />
+            <LastPremieres lastPremieres={test_premieres} className='home-loader-content' />
             <ActorsBirthdays actors={[]} className='home-loader-content' />
-            <Carrousel items={current_items} />
+            <Banner text='WATCH_LIST' size='title' />
+            <CarrouselHorizontal items={current_items} />
+            <Banner text='MORE_RECENT' size='title' />
+            <CarrouselHorizontal items={current_items} />
+            <Banner text='MORE_VOTED' size='title' />
+            <CarrouselHorizontal items={current_items} />
+            <Banner text='YOUR_TOP' size='title' />
+            <CarrouselHorizontal items={current_items} />
+            <Banner text='MORE_COMMENTED_MOVIES' size='title' />
+            <CarrouselHorizontal items={current_items} />
         </div>
     )
 }

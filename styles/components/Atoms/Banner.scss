@@ -1,6 +1,13 @@
 .banner-title {
+  font-size: 2rem;
+}
+
+.banner-div{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+  margin-top: 1rem;
+  margin-left: 5%;
+  width: 80%;
 }

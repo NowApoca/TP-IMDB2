@@ -1,10 +1,9 @@
-import CarrouselItem from './CarrouselItem'
 import Bookmark from '@material-ui/icons/Bookmark'
 import Rating from '../../Atoms/Rating'
 import RateButton from '../../Atoms/RateButton'
-import CarrouselRating from '../../Molecules/CarrouselRating'
+import CarrouselRating from '../CarrouselRating'
 
-export default function Carrousel({item}){
+export default function CarrouselItem({item}){
     return (
         <div className='carrousel-item-container'>
             <Bookmark className='carrousel-item-bookmark' />

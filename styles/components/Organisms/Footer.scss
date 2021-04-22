@@ -1,0 +1,45 @@
+
+
+.footer-info {
+    height: 20vh;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-icons {
+    min-width: 3rem;
+    min-height: 3rem;
+    color: aliceblue;
+}
+
+.footer-api{
+    font-size: 3rem;
+    color: aliceblue;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-about-us{
+    height: 3rem;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-about-us-text{
+    color: aliceblue;
+}
+
+.footer-about-us-icon{
+    font-size: 3rem;
+    margin-left: 0.3rem;
+    color: aliceblue;
+}

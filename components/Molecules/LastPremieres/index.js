@@ -1,4 +1,5 @@
-
+import LastPremier from './LastPremier'
+import SmallPremier from './SmallPremier'
 
 export default function LastPremieres({
     lastPremieres}){
@@ -8,13 +9,18 @@ export default function LastPremieres({
 
 
     return (
-        <div>
-            <LastPremier lastPremier={lastPremier} />
-            {
-                newArrayLastPremieres.map(premiere => {
-                    return <SmallPremier premiere={premiere} />
-                })
-            }
+        <div className='premiers-container'>
+            <div className='premiers-last-container'>
+                <LastPremier lastPremier={lastPremier} />
+            </div>
+            <div className='premiers-smalls-container'>
+                {
+                    newArrayLastPremieres.map(premiere => {
+                        return <SmallPremier premiere={premiere} />
+                    })
+                }
+            </div>
+            
         </div>
     )
 }

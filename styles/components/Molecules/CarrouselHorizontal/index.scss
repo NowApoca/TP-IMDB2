@@ -1,0 +1,11 @@
+@import './CarrouselItem.scss';
+
+.horizontal-carrousel-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    overflow-x: auto;
+    width: auto;
+    margin-top: 1rem;
+    flex: none;
+}

@@ -1,8 +1,8 @@
 import CarrouselItem from './CarrouselItem'
 
-export default function Carrousel({items}){
+export default function CarrouselHorizontal({items}){
     return (
-        <div>
+        <div className='horizontal-carrousel-container'>
             {
                 items.map(item => {
                     return <CarrouselItem item={item} />
