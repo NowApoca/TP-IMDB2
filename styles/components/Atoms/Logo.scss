@@ -1,0 +1,9 @@
+@import '../../colors.scss';
+@import '../../abstract.scss';
+
+.logo{
+    height: 70px;
+    width: 70px;
+    background-color: $base-color;
+    border-radius: $border-radius-sm;
+}

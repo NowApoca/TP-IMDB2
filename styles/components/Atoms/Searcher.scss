@@ -1,0 +1,18 @@
+@import '../../colors.scss';
+
+.searcher-container{
+    background-color: $base-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0.5rem;
+    height: 2rem;
+}
+
+.searcher-icon{
+
+}
+
+.searcher-input{
+    width: 50vw;
+}

@@ -1,0 +1,33 @@
+
+
+.rating-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.score-bad{
+    color: red;
+    fill: red;
+}
+
+.score-regular{
+    color: rgb(104, 104, 52);
+    fill: rgb(104, 104, 52);
+}
+
+.score-good{
+    color: green;
+    fill: green;
+}
+
+.score-empty{
+    color: black;
+    fill: black;
+}
+
+.rating-text {
+    font-size: 1.5rem;
+    padding-right: 0.4rem;
+}

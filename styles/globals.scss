@@ -1,0 +1,30 @@
+@import "components/Atoms/index.scss";
+
+@import "components/Molecules/index.scss";
+
+@import "components/Organisms/index.scss";
+
+@import "layout.scss";
+
+@import "colors.scss";
+@import "base.scss";
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: $base-color;
+  font-weight: bold;
+}
+
+a.disabled {
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: $auxiliar-color;
+}

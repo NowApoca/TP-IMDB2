@@ -1,0 +1,42 @@
+@import '../../../abstract.scss';
+
+.carrousel-item-container{
+    width: 20vw;
+    background-color: blue;
+    border-radius: $border-radius-med;
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrousel-item-image{
+    width: 90%;
+    margin-left: 5%;
+    height: 70%;
+    object-fit: cover;
+    border-style: solid;
+    border-radius: $border-radius-bg;
+    border-width: 0.5px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.carrousel-item-bookmark{
+    position: absolute;
+    fill: white;
+    color: white;
+    stroke: black;
+    stroke-width: 0.2px;
+    margin-top: 0.4rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.carrousel-item-title{
+    font-size: 1.5rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1rem;
+    text-align: center;
+}

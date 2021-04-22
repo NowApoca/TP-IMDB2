@@ -1,0 +1,30 @@
+@import 'colors.scss';
+
+h1
+h2
+h3
+
+p {
+    margin-bottom: 0;
+}
+
+input:focus,
+button:focus{
+    outline: none;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.underline{
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
