@@ -1,0 +1,23 @@
+
+
+.title-cast-actor-profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 1rem;
+    height: auto;
+    align-items: center;
+}
+
+.title-cast-actor-profile-image{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    border: 0.2px solid gray;
+    height: 3rem;
+    width: 3rem;
+    object-fit: cover;
+}
+
+.title-cast-actor-profile-text{
+    margin-left: 0.3rem;
+}

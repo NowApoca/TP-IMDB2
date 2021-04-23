@@ -1,0 +1,25 @@
+@import '../../colors.scss';
+
+.celebrity-card-container{
+    width: 12rem;
+    height: 100%;
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.celebrity-card-image{
+    border-radius: 100%;
+    background-color: white;
+    width: 10rem;
+    height: 10rem;
+    margin-left: 1rem;
+    object-fit: cover;
+}
+
+.celebrity-card-text{
+    margin-top: 0.3rem;
+    color: $primary-color-text;
+}

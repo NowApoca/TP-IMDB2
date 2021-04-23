@@ -2,7 +2,7 @@ export default function OurTable({columns, rows, columnsOrder}) {
     const elements = getElements(columns, rows, columnsOrder)
 
     return (
-        <div className='tableDiv'>
+        <div className='table-div'>
             <table className='our-table-main res-table'>
               <thead>
                 <tr>
@@ -39,15 +39,17 @@ const getElements = (columns, rows, columnsOrder) => {
         } 
         columnObj[column.field] = column.mustBeShowed;
     })
-    rows.map(row => {
+    rows.map((row, rowIndex) => {
         const rowValues = []
-        columnsOrder.map( columnOrder => {
+        columnsOrder.map( (columnOrder, index) => {
             if(columnObj[columnOrder]){
-                rowValues.push(<td>{row.values[columnOrder]}</td>)
+                rowValues.push(<td  key={index}>{
+                    row.values[columnOrder]
+                    }</td>)
             }
         })
         rowElements.push(
-            <tr>
+            <tr className={rowIndex%2 == 0? 'th-even': 'th-odd'}>
                 {rowValues}
             </tr>
         )

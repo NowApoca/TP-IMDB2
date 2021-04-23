@@ -1,0 +1,15 @@
+.celebrities-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    background-color: red;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.celebrities-item-container{
+    background-color: blue;
+}

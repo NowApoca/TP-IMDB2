@@ -1,9 +1,8 @@
 import ContentLoader, { Rect, Circle } from 'react-content-loader'
 import LastPremieres from '../../Molecules/LastPremieres'
-import ActorsBirthdays from '../../Molecules/ActorsBirthdays'
+import CelebrityCards from '../CelebrityCards'
 import CarrouselHorizontal from '../../Molecules/CarrouselHorizontal'
 import Banner from '../../Atoms/Banner'
-
 //const Loader = ({className}) =>  <ContentLoader 
 //speed={2}
 //width={400}
@@ -51,6 +50,13 @@ const test_premieres = [
     {},
 ]
 
+const celebrities = [
+    {},
+    {},
+    {},
+    {},
+]
+
 export default function Home(){
 
     const current_items = test_items
@@ -58,16 +64,15 @@ export default function Home(){
     return (
         <div>
             <LastPremieres lastPremieres={test_premieres} className='home-loader-content' />
-            <ActorsBirthdays actors={[]} className='home-loader-content' />
             <Banner text='WATCH_LIST' size='title' />
             <CarrouselHorizontal items={current_items} />
+            <Banner text='CELEBRITIES_BIRTHDAYS' size='title' />
+            <CelebrityCards celebrities={celebrities} className='home-loader-content' />
             <Banner text='MORE_RECENT' size='title' />
             <CarrouselHorizontal items={current_items} />
+            <Banner text='CELEBRITIES_MORE_VOTED' size='title' />
+            <CelebrityCards celebrities={celebrities} />
             <Banner text='MORE_VOTED' size='title' />
-            <CarrouselHorizontal items={current_items} />
-            <Banner text='YOUR_TOP' size='title' />
-            <CarrouselHorizontal items={current_items} />
-            <Banner text='MORE_COMMENTED_MOVIES' size='title' />
             <CarrouselHorizontal items={current_items} />
         </div>
     )

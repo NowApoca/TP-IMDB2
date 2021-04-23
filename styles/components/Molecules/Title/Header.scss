@@ -1,0 +1,50 @@
+@import '../../../layout.scss';
+
+$marginLeftTitleText: 1rem;
+$marginLeftTitleText: 1rem;
+
+.title-margin{
+    margin-left: $marginLeftTitleText;
+    margin-top: $marginLeftTitleText;
+}
+
+.title-header-container{
+    width: 100%;
+    height: 30vh;
+    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: $marginLeftTitleText;
+}
+
+.title-header-img{
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-header-text{
+    width: 70%;
+    background-color: yellow;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-header-text-title{
+    display: flex;
+    flex-direction: row;
+    font-size: $title-size;
+    @extend .title-margin;
+}
+
+.title-header-text-rating{
+    font-size: $title-size;
+    @extend .title-margin;
+}
+
+.title-header-text-subtitle{
+    font-size: $subtitle-size;
+    @extend .title-margin;
+}

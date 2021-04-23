@@ -1,0 +1,19 @@
+
+.title-related-movies-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.title-related-movies-item-img{
+    width: 12.5%;
+    height: 7rem;
+    background-color: red;
+    object-fit: cover;
+    border-left: 0.15rem solid white;
+    border-top: 0.15rem solid white;
+    box-sizing: border-box;
+}
+
