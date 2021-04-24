@@ -1,0 +1,23 @@
+
+
+.tops-main-container{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.tops-entities-container{
+    width: 70%;
+    margin-left: 5%;
+
+    height: 20vh;
+    background-color: aqua;
+}
+
+.tops-filters-container{
+    width: 20%;
+    height: 20vh;
+    background-color: aquamarine;
+}
