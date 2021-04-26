@@ -1,5 +1,7 @@
 import LastPremier from './LastPremier'
 import SmallPremier from './SmallPremier'
+import LoadLastPremier from './LoadLastPremier'
+import LoadSmallPremier from './SmallPremierLoad'
 
 export default function LastPremieres({
     lastPremieres}){
@@ -11,13 +13,23 @@ export default function LastPremieres({
     return (
         <div className='premiers-container'>
             <div className='premiers-last-container'>
-                <LastPremier lastPremier={lastPremier} />
+                {
+                    lastPremier?
+                    <LastPremier lastPremier={lastPremier} />
+                    :
+                    <LoadLastPremier />
+                }
+                
             </div>
             <div className='premiers-smalls-container'>
                 {
-                    newArrayLastPremieres.map(premiere => {
-                        return <SmallPremier premiere={premiere} />
-                    })
+                    lastPremieres ?
+                        newArrayLastPremieres.map(premiere => {
+                            return <SmallPremier premiere={premiere} />
+                        })
+                    :
+                    <LoadSmallPremier amount={3} />
+                    
                 }
             </div>
             

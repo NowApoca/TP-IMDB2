@@ -1,0 +1,17 @@
+@import '../../../layout.scss';
+
+.top-list-header-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+}
+.top-list-header-title{
+    border-bottom: 0.5px solid gray;
+    font-size: $title-size;
+}
+.top-list-header-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

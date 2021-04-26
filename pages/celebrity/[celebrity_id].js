@@ -8,6 +8,9 @@ const testCelebrityData = {
     name: 'Juan',
     rating: 5,
     surname: 'Perez',
+    country: 'Argentina',
+    language: 'Ingles',
+    biography: 'Perez PerezPerezPerezPerezPerezPerez PerezPerezPerezPerezPerezPerezPerezPerezPerez PerezPerezPerezPerezPerezPerezPerezPerezPerezPerezPerezPerezPerezPerez',
     bornDate: '2021-04-23T18:41:56.908Z',
     genres: ['drama','terror','comedia']
   },

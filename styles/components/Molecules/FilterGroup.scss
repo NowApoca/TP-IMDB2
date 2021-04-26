@@ -1,0 +1,20 @@
+
+
+.filter-group-label {
+    margin-top: 0.3rem;
+    width: fit-content;
+}
+
+.filter-group-label-selected {
+    color: blue;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: 0.3px solid gray;
+    background-color: aliceblue;
+    border-radius: 0.2rem;
+}
+
+.filter-group-container{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,9 +1,10 @@
 
-
+import Loader from './Loader'
 
 
 export default function CelebrityCard({celebrity}){
-    return (<div className='celebrity-card-container'>
+    return (
+    <div className='celebrity-card-container'>
           <img
             className='celebrity-card-image'
             src='./logo.png'

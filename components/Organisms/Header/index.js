@@ -4,6 +4,7 @@ import NavBarLink from '../../Atoms/Header/NavBarLink'
 import Logo from '../../Atoms/Logo'
 import Searcher from '../../Atoms/Searcher'
 import Menu from '@material-ui/icons/Menu'
+import Settings from '@material-ui/icons/Settings'
 
 export default function Header(){
 
@@ -18,11 +19,15 @@ export default function Header(){
             <a href='/' >
                 <Logo />
             </a>
+
             <button className='header-menu-icon'>
                 Menu <Menu  />
             </button>
             <Searcher />
             {memoizedLinks}
+            <button className='header-menu-icon'>
+                <Settings  />
+            </button>
         </div>
     )
 }

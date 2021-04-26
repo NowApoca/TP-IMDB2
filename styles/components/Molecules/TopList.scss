@@ -1,0 +1,41 @@
+
+
+.top-list-bookmark-container{
+    font-size: 4rem;
+}
+
+.top-list-bookmark-container:hover{
+    color: rgb(103, 103, 194);
+}
+
+.top-list-bookmark-container:hover{
+    cursor: progress;
+}
+
+.top-list-bookmark-watched{
+    color: black;
+}
+
+.top-list-bookmark-watched{
+    color: gray;
+}
+
+.top-list-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    height: 5rem;
+    width: 100%;
+}
+
+.top-list-title-image{
+    height: 100%;
+    width: 5rem;
+    object-fit: cover;
+}
+
+.top-list-title-text{
+    margin-left: 0.3rem;
+}

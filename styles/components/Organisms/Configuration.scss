@@ -1,0 +1,19 @@
+
+
+.configuration-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.configuration-form-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+}
+
+.configuration-form-item{
+    margin: 2rem;
+}

@@ -1,26 +1,23 @@
 import Header from '../../components/Organisms/Header'
 import Footer from '../../components/Organisms/Footer'
-import Tops from '../../components/Organisms/Tops'
+import Configuration from '../../components/Organisms/Configuration'
 import {useRouter} from 'next/router'
 
-const testTops = {
-    tops: [
-        {
-
-        }
-    ]
+const testConfigurationData = {
+    movies: [],
 }
 
 
-export default function UserTops({user, t}) {
+export default function Title({user, t}) {
   const router = useRouter()
 
-  //const {title} = router.query.title
+  const {name_id} = router.query
 
   return (
     <div >
       <Header />
-      <Tops titleData={testTops.tops} />
+      <span>{name_id}</span>
+      <Configuration />
       <Footer />
     </div>
   )

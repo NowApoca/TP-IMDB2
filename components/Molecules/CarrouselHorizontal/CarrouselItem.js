@@ -3,15 +3,20 @@ import Rating from '../../Atoms/Rating'
 import RateButton from '../../Atoms/RateButton'
 import CarrouselRating from '../CarrouselRating'
 
-export default function CarrouselItem({item}){
+export default function CarrouselItem({item, type}){
     return (
         <div className='carrousel-item-container'>
-            <Bookmark className='carrousel-item-bookmark' />
+            {
+                type != 'users' && <Bookmark
+                className='carrousel-item-bookmark' />
+            }
             <img
                 className='carrousel-item-image'
                 src={item.image}
             />
-            <CarrouselRating />
+            {
+                type != 'users' && <CarrouselRating />
+            }
             <span className='carrousel-item-title'>
                 {item.title}
             </span>
