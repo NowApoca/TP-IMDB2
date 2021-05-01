@@ -1,13 +1,69 @@
 
 
-$base-color:#eeeeee;
+$base-color:#cfcbcb;
+$base-color-dark:#464444;
+
 
 $primary-color: #3A6FA5;
 $primary-color-text: $base-color;
 
+$primary-color-dark: #3A6FA5;
+$primary-color-text-dark: $base-color-dark;
+
+
 $secondary-color: #393e46;
 $secondary-color-text: $base-color;
 
-$third-color: #222831;
+$secondary-color-dark: #393e46;
+$secondary-color-text-dark: $base-color-dark;
 
+
+$third-color: #222831;
 $auxiliar-color: #00adb5;
+
+$third-color-dark: #222831;
+$auxiliar-color-dark: #00adb5;
+
+
+
+.light-app{
+    --red: #eb1c1c;
+    --yellow: #e9d41e;
+    --green: #35a835;
+
+    --base-color: #eeeeee;
+
+    --primary-color: #3A6FA5;
+    --primary-color-text: #173041;
+
+    --secondary-color: #393e46;
+    --secondary-color-text: #173041;
+
+    --third-color: #222831;
+    --auxiliar-color: #00adb5;
+    
+    background-color: var(--base-color);
+    display: block;
+}
+
+.dark-app{
+    --red: #eb1c1c;
+    --yellow: #e9d41e;
+    --green: #35a835;
+
+    --base-color: #1b262c;
+
+    --primary-color:#0f4c75;
+    --primary-color-text: #eeeeee;
+
+    --secondary-color: #173041;
+    --secondary-color-text: #eeeeee;
+
+    --third-color: #2e3336;
+    --auxiliar-color: #202525;
+
+    background-color: var(--base-color);
+    display: block;
+}
+
+

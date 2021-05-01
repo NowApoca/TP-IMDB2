@@ -9,14 +9,6 @@
 @import "colors.scss";
 @import "base.scss";
 
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
-  margin: 0;
-  background-color: $base-color;
-  font-weight: bold;
-}
-
 a.disabled {
   pointer-events: none;
 }
@@ -27,4 +19,8 @@ a {
 
 a:hover {
   color: $auxiliar-color;
+}
+
+body {
+  margin: 0px;
 }

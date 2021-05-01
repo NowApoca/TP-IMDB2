@@ -3,7 +3,8 @@ import LastPremieres from '../../Molecules/LastPremieres'
 import CelebrityCards from '../CelebrityCards'
 import CarrouselHorizontal from '../../Molecules/CarrouselHorizontal'
 import Banner from '../../Atoms/Banner'
-
+import Button from '../../Atoms/Button'
+import UserIdInput from '../../Atoms/Inputs/UserIdInput'
 
 const test_items = [{
     image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
@@ -51,6 +52,11 @@ export default function Home(){
 
     return (
         <div>
+            <Button
+                className='button-general-class'
+                text='asdads'
+            />
+            <UserIdInput />
             <LastPremieres lastPremieres={test_premieres} className='home-loader-content' />
             <Banner text='WATCH_LIST' size='title' />
             <CarrouselHorizontal items={current_items} />

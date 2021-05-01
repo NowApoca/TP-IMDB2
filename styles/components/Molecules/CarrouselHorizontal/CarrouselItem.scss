@@ -1,12 +1,15 @@
 @import '../../../abstract.scss';
+@import '../../../colors.scss';
 
 .carrousel-item-container{
     min-width: 20vw;
-    background-color: blue;
+    background-color: var(--primary-color);
     border-radius: $border-radius-md;
     position: relative;
     height: 50vh;
     display: flex;
+    color: var(--primary-color-text);
+    fill: var(--primary-color-text);
     flex-direction: column;
     margin: 0.25rem;
 }
@@ -17,6 +20,7 @@
     height: 70%;
     object-fit: cover;
     border-style: solid;
+    background-color: var(--secondary-color);
     border-radius: $border-radius-bg;
     border-width: 0.5px;
     margin-top: 1rem;

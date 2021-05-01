@@ -12,7 +12,8 @@ function MyApp({ Component, t }) {
   const [loading, setLoading] = useState(true)
   const notIdentifiedUser = {
     identified: false,
-    role: 'NOT_USER'
+    role: 'NOT_USER',
+    isDark: false,
   }
   const [user, setUser] = useState(notIdentifiedUser);
   const router = useRouter()
@@ -41,7 +42,7 @@ function MyApp({ Component, t }) {
       {
         loading ? <h5>...</h5> :(
           <ToastProvider autoDismissTimeout={4000} autoDismiss={true}>
-            <div className="flex-wrapper">
+            <div className={`${user.isDark? 'dark-app': 'light-app'}`}>
               <Component t={t} user={user} />
             </div>
           </ToastProvider>

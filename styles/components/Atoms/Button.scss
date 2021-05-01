@@ -1,0 +1,33 @@
+
+
+.button-general-class{
+    width: 10%;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-style: solid;
+    color: white;
+    height: 2rem;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.variant-primary {
+    background-color: var(--primary-color);
+}
+
+.variant-danger {
+    background-color: var(--red);
+}
+
+.variant-warning {
+    background-color: var(--yellow);
+}
+
+.variant-success {
+    background-color: var(--green);
+}
+
+.create-pipe-button:hover,
+.create-pipe-button:focus{
+    background-color: #5e443a;
+}

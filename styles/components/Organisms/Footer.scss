@@ -2,7 +2,7 @@
 
 .footer-info {
     height: 20vh;
-    background-color: red;
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -28,7 +28,7 @@
 
 .footer-about-us{
     height: 3rem;
-    background-color: blue;
+    background-color: var(--third-color);
     display: flex;
     flex-direction: row;
     justify-content: center;

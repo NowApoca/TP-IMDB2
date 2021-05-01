@@ -1,7 +1,7 @@
 
-export default function Input({className, placeholder, value, setter}){
+export default function Input({className, placeholder, value, setter, type}){
     return (
-        <input className={className} type='text' placeholder={placeholder} value={value}  onInout={(e) => {
+        <input className={className} type={type} placeholder={placeholder} value={value}  onInput={(e) => {
             setter(e.target.value)
         }}/>
     )
