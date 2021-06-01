@@ -1,13 +1,6 @@
-import SortBy from '../../../Atoms/SortBy'
-
-
-export default function TopListHeader({group = {}}){
+export default function TopListHeader({filter}){
     return (<div className='top-list-header-container'>
-        <span className='top-list-header-title'>{`TOP ${group.label} MOVIES`}</span>
-        <div className='top-list-header-details'> 
-            <span >{`Movies ranked by ${group.description}`}</span>
-            <SortBy />
-        </div>
+        <span className='top-list-header-title'>{`TOP 100 ${filter} MOVIES`}</span>
     </div>)
 }
 

@@ -1,11 +1,13 @@
-
+@import '../../colors.scss';
 
 .tops-main-container{
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     height: auto;
-
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
+    background-color: $primary-color;
 }
 
 .tops-entities-container{
@@ -13,11 +15,14 @@
     margin-left: 5%;
     height: auto;
     
-    background-color: aqua;
+    background-color: $primary-color;
 }
 
 .tops-filters-container{
-    width: 20%;
+    width: 19%;
+    margin-top: 0.5rem;
+    margin-left: 0.5%;
+    margin-left: 0.5%;
     height: auto;
-    background-color: aquamarine;
+    background-color: $base-color;
 }

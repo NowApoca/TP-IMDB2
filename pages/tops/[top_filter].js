@@ -2,44 +2,32 @@ import Header from '../../components/Organisms/Header'
 import Footer from '../../components/Organisms/Footer'
 import Tops from '../../components/Organisms/Tops'
 import {useRouter} from 'next/router'
-
-const testTops = {
-    tops: [
-        {
-          title: 'ALGUN TITULO ADSDSADAS',
-          rating: 4,
-          isInWatchedList: true,
-        },{
-          title: 'ALGUN TITULO ADSDSADAS',
-          rating: 1,
-          isInWatchedList: false,
-        },{
-          title: 'ALGUN TITULO ADSDSADAS',
-          rating: 3,
-          isInWatchedList: false,
-        },{
-          title: 'ALGUN TITULO ADSDSADAS',
-          rating: 4,
-          isInWatchedList: true,
-        },{
-          title: 'ALGUN TITULO ADSDSADAS',
-          rating: 2,
-          isInWatchedList: true,
-        }
-    ],
-}
+import hit from '../../api/hit'
+import endpoints from '../../api/endpoints'
+import {useEffect, useState} from 'react'
 
 
 export default function UserTops({user, t}) {
-  const router = useRouter()
 
-  //const {title} = router.query.title
+  const router = useRouter();
+
+  const { top_filter } = router.query;
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    hit(endpoints.ITEMS.GET.TOP(top_filter)).then(result => {
+      if(result.status == 200){
+        setItems(result.data)
+      }
+    })
+  }, [])
 
   return (
     <div >
       <Header />
       <Tops
-        tops={testTops.tops} />
+        tops={items} filter={top_filter} />
       <Footer />
     </div>
   )

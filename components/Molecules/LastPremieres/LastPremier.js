@@ -3,15 +3,20 @@
 
 
 export default function LastPremier({premiere = {}}){
+    console.log(premiere)
     return (
         <div className='last-premiere-container'>
-            <img
+            <img onClick={() => {
+                    window.location = `/title/${premiere.id}`
+                }}
                 className='last-premier-main-foto'
-                src='./logo.png'
+                src={premiere.image}
             />
             <div className='last-premier-movie-banner'>
                 <span className='last-premier-movie-title'>
-                    {premiere.title || 'ALGUN TITULO'}
+                    <a href={`/title/${premiere.id}`}>
+                        {premiere.id || 'ALGUN TITULO'}
+                    </a>
                 </span>
                 <span className='last-premier-movie-sub-title'>
                     {premiere.subtitle || 'ALGUN TITULO'}

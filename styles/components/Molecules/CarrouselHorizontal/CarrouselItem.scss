@@ -6,25 +6,29 @@
     background-color: var(--primary-color);
     border-radius: $border-radius-md;
     position: relative;
-    height: 50vh;
+    height: 65vh;
     display: flex;
     color: var(--primary-color-text);
     fill: var(--primary-color-text);
     flex-direction: column;
     margin: 0.25rem;
 }
+  
 
 .carrousel-item-image{
     width: 90%;
     margin-left: 5%;
-    height: 70%;
+    height: 50vh;
     object-fit: cover;
     border-style: solid;
     background-color: var(--secondary-color);
-    border-radius: $border-radius-bg;
     border-width: 0.5px;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+}
+
+.carrousel-item-image:hover{
+    cursor: pointer;
 }
 
 .carrousel-item-bookmark{
@@ -33,9 +37,8 @@
     color: white;
     stroke: black;
     stroke-width: 0.2px;
-    margin-top: 0.4rem;
-    font-size: 1.5rem;
-    margin-left: 1rem;
+    top: 1.2rem;
+    left: 1.2rem;
 }
 
 .carrousel-item-title{

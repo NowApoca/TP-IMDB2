@@ -1,4 +1,5 @@
 @import '../../../layout.scss';
+@import '../../../colors.scss';
 
 $marginLeftTitleText: 1rem;
 $marginLeftTitleText: 1rem;
@@ -10,8 +11,8 @@ $marginLeftTitleText: 1rem;
 
 .celebrity-header-container {
     width: 100%;
-    height: 30vh;
-    background-color: rebeccapurple;
+    height: auto;
+    background-color: $primary-color;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -19,17 +20,23 @@ $marginLeftTitleText: 1rem;
 }
 
 .celebrity-header-img{
-    width: 20%;
-    height: 100%;
+    border-radius: 100%;
+    background-color: $base-color;
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
+    padding: 0.5rem;
     object-fit: cover;
 }
 
 .celebrity-header-text{
     width: 70%;
-    background-color: yellow;
+    background-color: $base-color;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .celebrity-header-text-celebrity{

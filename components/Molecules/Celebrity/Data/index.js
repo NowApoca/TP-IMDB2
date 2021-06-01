@@ -1,4 +1,5 @@
 import Banner from '../../../Atoms/Banner'
+import Moment from '../../../Atoms/Moment'
 
 export default function Data({data}){
     return (
@@ -11,7 +12,7 @@ export default function Data({data}){
                 {`${'Idioma'}: ${data.language}`}
             </span>
             <span className='general-data-text'>
-                {`${'Fecha de Nacimiento'}: ${data.bornDate}`}
+                {`${'Fecha de Nacimiento'}: `} <Moment date={data.bornDate} />
             </span>
             <span className='general-data-text'>
                 {`${'Biografia'}: ${data.biography}`}

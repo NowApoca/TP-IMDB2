@@ -1,10 +1,12 @@
 @import '../../colors.scss';
+@import '../../abstract.scss';
 
 .celebrity-card-container{
     width: 12rem;
     height: 100%;
     background-color: $primary-color;
     display: flex;
+    border-radius: $border-radius-sm;
     flex-direction: column;
     text-align: center;
 }
@@ -16,6 +18,7 @@
     width: 10rem;
     height: 10rem;
     margin-left: 1rem;
+    margin-top: 0.5rem;
     object-fit: cover;
 }
 

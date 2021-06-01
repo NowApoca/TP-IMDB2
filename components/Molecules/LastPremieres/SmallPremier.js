@@ -5,16 +5,20 @@
 export default function SmallPremier({premiere}){
     return (
         <div className='small-premiere-container'>
-            <img
+            <img onClick={() => {
+                window.location = `/title/${premiere.id}`
+            }}
                 className='small-premier-image'
-                src='./logo.png'
+                src={premiere.image}
             />
             <div className='small-premier-data-container'>
                 <span className='small-premier-title'>
-                    {premiere.title || 'ALGUN TITULO'}
+                    <a href={`/title/${premiere.id}`}>
+                        {premiere.id || 'ALGUN TITULO'}
+                    </a>
                 </span>
                 <span className='small-premier-text'>
-                    {premiere.title || 'ALGUN TEXTO'}
+                    {premiere.id || 'ALGUN TEXTO'}
                 </span>
             </div>
                 

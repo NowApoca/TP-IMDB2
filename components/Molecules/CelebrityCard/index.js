@@ -7,7 +7,7 @@ export default function CelebrityCard({celebrity}){
     <div className='celebrity-card-container'>
           <img
             className='celebrity-card-image'
-            src='./logo.png'
+            src={celebrity.image}
         />
         <span className='celebrity-card-text'>{celebrity.name || 'ALGUN NOMBRE'}</span>
         <span className='celebrity-card-text'>{celebrity.type || 'ACTOR'}</span>

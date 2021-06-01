@@ -1,13 +1,13 @@
 import CelebrityCard from '../../Molecules/CelebrityCard'
 import Loader from '../../Molecules/CelebrityCard/Loader'
 
-export default function CelebrityCards({celebrities}){
-    celebrities = undefined
-    let newArrCelebrities
+export default function CelebrityCards({celebrities = []}){
+    if(celebrities == null) celebrities = []
+    let newArrCelebrities = celebrities.concat([])
     if(celebrities){
-        celebrities.concat([])
         newArrCelebrities = newArrCelebrities.splice(0, 4)
     }
+
     return (
         <div className='celebrities-container'>
             {

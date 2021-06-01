@@ -5,69 +5,92 @@ import CarrouselHorizontal from '../../Molecules/CarrouselHorizontal'
 import Banner from '../../Atoms/Banner'
 import Button from '../../Atoms/Button'
 import UserIdInput from '../../Atoms/Inputs/UserIdInput'
+import {useState, useEffect} from 'react'
+import hit from '../../../api/hit'
+import endpoints from '../../../api/endpoints'
 
-const test_items = [{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-},{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-},{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-},{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-},{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-},{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-},{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-},{
-    image: 'https://lh3.googleusercontent.com/mHzNDBVUbN5g-fJB7cLiGOrzXhBJO9vNydUF4laYfiqW2rcXfUAeLcPkA0Z3PLML3nBPyX_wOY8ONHFZd8UFkTE2iDOBZdAaOLpEDPL8PndH5H7w5xWSeE9MrdfCHoNRK9DnJd71=w2400',
-    title: 'SOME TITLE'
-}]
+function getItemsWatchList(setter){
+    hit(endpoints.ITEMS.GET.GET()).then(result => {
+        console.log(result)
+        if(result.status == 200){
+            setter(result.data);
+        }
+    })
+}
 
-const test_premieres = [
-    {},
-    {},
-    {},
-    {},
-]
+function getItemsMoreRecent(setter){
+    hit(endpoints.ITEMS.GET.GET()).then(result => {
+        if(result.status == 200){
+            setter(result.data);
+        }
+    })
+}
 
-const celebrities = [
-    {},
-    {},
-    {},
-    {},
-]
+function getItemsMoreVoted(setter){
+    hit(endpoints.ITEMS.GET.GET()).then(result => {
+        if(result.status == 200){
+            setter(result.data);
+        }
+    })
+}
+
+function getItemsPremiers(setter){
+    hit(endpoints.ITEMS.GET.GET()).then(result => {
+        if(result.status == 200){
+            setter(result.data);
+        }
+    })
+}
+
+function getCelebritiesBirthdays(setter){
+    hit(endpoints.CELEBRITIES.GET.GET()).then(result => {
+        if(result.status == 200){
+            setter(result.data);
+        }
+    })
+}
+
+function getCelebritiesMoreVoted(setter){
+    hit(endpoints.CELEBRITIES.GET.GET()).then(result => {
+        if(result.status == 200){
+            setter(result.data);
+        }
+    })
+}
+
 
 export default function Home(){
 
-    const current_items = test_items
+    const [itemsWatchList, setItemsWatchList] = useState([]);
+    const [itemsMoreRecent, setItemsMoreRecent] = useState([]);
+    const [itemsMoreVoted, setItemsMoreVoted] = useState([]);
+    const [itemPremiers, setItemsPremiers] = useState([]);
+
+    const [celebritiesBirthday, setCelebritiesBirthdays] = useState([]);
+    const [celebritiesMoreVoted, setCelebritiesMoreVoted] = useState([]);
+
+    useEffect(() => {
+        getItemsWatchList(setItemsWatchList)
+        getItemsMoreRecent(setItemsMoreRecent)
+        getItemsMoreVoted(setItemsMoreVoted)
+        getItemsPremiers(setItemsPremiers)
+        getCelebritiesBirthdays(setCelebritiesBirthdays)
+        getCelebritiesMoreVoted(setCelebritiesMoreVoted)
+    }, [])
 
     return (
         <div>
-            <Button
-                className='button-general-class'
-                text='asdads'
-            />
-            <UserIdInput />
-            <LastPremieres lastPremieres={test_premieres} className='home-loader-content' />
+            <LastPremieres lastPremieres={itemPremiers} className='home-loader-content' />
             <Banner text='WATCH_LIST' size='title' />
-            <CarrouselHorizontal items={current_items} />
+            <CarrouselHorizontal type='items' items={itemsWatchList} />
             <Banner text='CELEBRITIES_BIRTHDAYS' size='title' />
-            <CelebrityCards celebrities={celebrities} className='home-loader-content' />
+            <CelebrityCards celebrities={celebritiesBirthday} className='home-loader-content' />
             <Banner text='MORE_RECENT' size='title' />
-            <CarrouselHorizontal items={undefined} />
+            <CarrouselHorizontal type='items' items={itemsMoreRecent} />
             <Banner text='CELEBRITIES_MORE_VOTED' size='title' />
-            <CelebrityCards celebrities={celebrities} />
+            <CelebrityCards celebrities={celebritiesMoreVoted} />
             <Banner text='MORE_VOTED' size='title' />
-            <CarrouselHorizontal items={current_items} />
+            <CarrouselHorizontal type='items' items={itemsMoreVoted} />
         </div>
     )
 }

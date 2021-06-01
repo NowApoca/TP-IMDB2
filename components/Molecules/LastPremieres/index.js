@@ -6,7 +6,8 @@ import LoadSmallPremier from './SmallPremierLoad'
 export default function LastPremieres({
     lastPremieres}){
 
-    const newArrayLastPremieres = lastPremieres.concat([])
+    let newArrayLastPremieres = lastPremieres.concat([])
+    newArrayLastPremieres = newArrayLastPremieres.splice(0, 4)
     const lastPremier = newArrayLastPremieres.splice(0, 1)
 
 
@@ -15,7 +16,7 @@ export default function LastPremieres({
             <div className='premiers-last-container'>
                 {
                     lastPremier?
-                    <LastPremier lastPremier={lastPremier} />
+                    <LastPremier premiere={lastPremier[0]} />
                     :
                     <LoadLastPremier />
                 }

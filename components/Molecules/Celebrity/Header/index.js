@@ -1,20 +1,21 @@
 import Rating from '../../../Atoms/Rating'
+import Moment from '../../../Atoms/Moment'
 
 export default function Header({data = {}}){
     return (
-        <div className='title-header-container'>
+        <div className='celebrity-header-container'>
             <img 
-                className='title-header-img'
-                src='../logo.png'
+                className='celebrity-header-img'
+                src={'../' + data.image}
             />
-            <div className='title-header-text'>
-                <span className='title-header-text-title'>
-                    {`${data.name || 'ALGUN'} ${data.surname || 'ALGUN'} (${data.bornDate || '1999'})`}
+            <div className='celebrity-header-text'>
+                <span className='celebrity-header-text-celebrity'>
+                    {`${data.name || 'ALGUN'} ${data.surname || 'ALGUN'} `}
                 </span>
-                <div className='title-header-text-rating'>
+                <div className='celebrity-header-text-rating'>
                     <Rating rating={data.rating} />
                 </div>
-                <span className='title-header-text-subtitle'>
+                <span className='celebrity-header-text-subtitle'>
                     {`${'GENEROS'}: ${data.genres.map(genre => genre)}`}
                 </span>
             </div>

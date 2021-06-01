@@ -13,7 +13,7 @@ export default function TitleCast({ data = [] }) {
       values: {
         actor: <div className='title-cast-actor-profile'>
             <img
-                src='../logo.png'
+                src={ `../${element.image}`}
                 className='title-cast-actor-profile-image'
             />
             <span className='title-cast-actor-profile-text'>
@@ -25,11 +25,6 @@ export default function TitleCast({ data = [] }) {
             
             
         </div>,
-        name: 
-          <a href={`/customers/${element.social_reason}`}>
-            
-          </a>
-        ,
         characters: element.characters.map(character => character)
       },
     };

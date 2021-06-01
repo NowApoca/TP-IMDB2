@@ -5,11 +5,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 0.5rem;
 }
 
 .title-related-movies-item-img{
     width: 12.5%;
     height: 7rem;
+    cursor: pointer;
     background-color: red;
     object-fit: cover;
     border-left: 0.15rem solid white;
