@@ -9,10 +9,12 @@ export default function Title({user, t}) {
   //const {title} = router.query.title
 
   return (
-    <div >
-      <Header />
-        <AdministrationUserContent />
+    <>
+      <div className='page-container' >
+        <Header />
+          <AdministrationUserContent />
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }

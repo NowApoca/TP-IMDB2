@@ -7,10 +7,12 @@ export default function Title({user, t}) {
   const router = useRouter()
 
   return (
-    <div >
+<>
+<div className='page-container'>
       <Header />
       <Configuration />
-      <Footer />
-    </div>
+</div>
+<Footer />
+</>
   )
 }

@@ -13,6 +13,26 @@ module.exports ={
 
 const dataByEndpoint = Object.freeze({
 
+    "/users/name": {
+      "patch": {
+            status: 204,
+            data: null
+        }
+    },
+    "/users/password": {
+      "patch": {
+            status: 204,
+            data: null
+      }
+    },
+
+    "/users/logout/all/devices": {
+      "post": {
+        status: 204,
+        data: null
+      }
+    },
+
     "/users": {
         "get":  {
             status: 200,

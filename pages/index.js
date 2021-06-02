@@ -4,10 +4,12 @@ import Home from '../components/Organisms/Home'
 
 export default function Root({user, t}) {
   return (
-    <div >
+<>
+<div className='page-container'>
       <Header />
       <Home />
-      <Footer />
-    </div>
+</div>
+<Footer />
+</>
   )
 }

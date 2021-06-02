@@ -1,8 +1,13 @@
 import OurTable from '../OurTable'
+import Button from '../../Atoms/Button'
 
 export default function UserTable({data}){
 
     if(!data) data = []
+
+  const blockUser = () => {
+
+  }
 
     const columns = [
         { name: "ID Usuario", field: "userId" },
@@ -19,7 +24,12 @@ export default function UserTable({data}){
             userId: element.userId,
             role: element.role,
             isBlocked: element.isBlocked,
-            block: <button>block</button>,
+            block: <Button 
+              text='Bloquear'
+              onClick ={() => blockUser(element.userId)}
+              variant='danger'
+              className='configuration-form-button'
+          />,
           },
         };
       });

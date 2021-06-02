@@ -2,9 +2,15 @@ module.exports = Object.freeze({
   USERS: {
     GET: {
       GET: () => ({ method: "get", url: `/users`, authentication: true }),
+      SESSION: () => ({ method: "get", url: `/sessions` }),
     },
     POST: {
       SESSION: () => ({ method: "post", url: `/sessions` }),
+      LOG_OUT_ALL_DEVICES: () => ({ method: "post", url: `/users/logout/all/devices` }),
+    },
+    PATCH: {
+      USER_NAME: () => ({ method: "patch", url: `/users/name` }),
+      PASSWORD: () => ({ method: "patch", url: `/users/password` }),
     },
     PUT: {
       PUT: (id) => ({

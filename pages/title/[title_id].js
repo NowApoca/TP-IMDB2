@@ -24,12 +24,14 @@ export default function Title({user, t}) {
   }, [])
 
   return (
-    <div >
+<>
+<div className='page-container'>
       <Header />
       {
         itemData && <TitleContent titleData={itemData} />
       }
-      <Footer />
-    </div>
+</div>
+<Footer />
+</>
   )
 }

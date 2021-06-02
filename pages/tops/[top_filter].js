@@ -24,11 +24,14 @@ export default function UserTops({user, t}) {
   }, [])
 
   return (
-    <div >
+
+<>
+<div className='page-container'>
       <Header />
       <Tops
         tops={items} filter={top_filter} />
-      <Footer />
-    </div>
+</div>
+<Footer />
+</>
   )
 }

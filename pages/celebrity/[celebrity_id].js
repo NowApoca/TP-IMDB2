@@ -21,12 +21,14 @@ export default function Title({user, t}) {
   //const {title} = router.query.title
 
   return (
-    <div >
+<>
+<div className='page-container'>
       <Header />
       {
         celebrityData && <CelebrityContent celebrityData={celebrityData} />
       }
-      <Footer />
-    </div>
+</div>
+<Footer />
+</>
   )
 }

@@ -13,13 +13,28 @@
 .configuration-form-container{
     display: flex;
     flex-direction: column;
-    border: 1px solid gray;
 }
 
 .configuration-form-item{
-    margin: 2rem;
+    margin: 1rem;
+    height: 2rem;
+    font-size: 1.5rem;
 }
 
 .configuration-form-title-text {
     font-size: $title-size;
+    color: $primary-color;
+    font-weight: bolder;
+}
+
+.configuration-form-button{
+    margin: 1rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
+    color: $base-color;
+}
+
+.configuration-form-error-text{
+    color: red;
 }

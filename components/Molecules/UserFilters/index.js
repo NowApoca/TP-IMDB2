@@ -2,8 +2,8 @@
 
 export default function UserFilters(){
     return (<div className='user-filters-container'>
-        <input placeholder='user id' />
-        <input placeholder='role' />
-        <input placeholder='isBlocked' />
+        <input className='user-filters-input' placeholder='user id' />
+        <input className='user-filters-input' placeholder='role' />
+        <input className='user-filters-input' placeholder='isBlocked' />
     </div>)
 }

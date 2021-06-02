@@ -1,5 +1,31 @@
+@import '../../colors.scss';
 
 .upload-item-container{
     display: flex;
     flex-direction: column;
+}
+
+.upload-item-input{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 2rem;
+    font-size: 1.5rem;
+}
+
+.upload-item-text{
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: $primary-color;
+}
+
+.upload-item-button{
+    height: 2rem;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.5rem;
+    color: $base-color;
 }
