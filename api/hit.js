@@ -6,8 +6,9 @@ import {mockData} from './mockData'
 const API_URL = getConfig().publicRuntimeConfig.NEXT_PUBLIC_API_URL
 
 const jsonHeaders = {
-  "Content-Type": "application/json",
-  "Accept": "application/json"
+  "Content-Type": "text/plain",
+  "Accept": "text/plain",
+  'Access-Control-Allow-Origin': '*,'
 };
 
 const formatToken = (token) => {
@@ -15,7 +16,8 @@ const formatToken = (token) => {
 }
 
 const hit = async ({ url, method, authentication, overrideBaseUrl }, opts = {}) => {
-    const token = localStorage.getItem('gpiAccessToken')
+    console.log('NO VENGO ACA?')
+    const token = localStorage.getItem('gpiAccessToken') || 'asd'
     if(opts.body) opts.body = JSON.stringify(opts.body)
     if (authentication && !token) return {status: 401};
     if(token) authentication = true;
@@ -24,20 +26,18 @@ const hit = async ({ url, method, authentication, overrideBaseUrl }, opts = {}) 
     let rawResponse = null;
     if (!bodyIsFormData)
       try{
-        rawResponse = false? await fetch((overrideBaseUrl || API_URL) + url, {
+        rawResponse = true? await fetch( `https://localhost:44330/hello?prueba=5` /* (overrideBaseUrl || API_URL) + url */, {
           method,
-          body,
+          body: opts.body,
           mode: 'cors',
           headers: {
-            ...(authentication && formatToken(token)),
-            ...(body && jsonHeaders),
-            ...(file && { "Content-Type": "multipart/form-data" }),
-            ...(headerOverride && headerOverride)
+            ...(opts.body && jsonHeaders),
           }
         }) : mockData(url, method);
       }catch(err){
-        
+        console.log(err,'ERRRRRRR'); 
       }
+    console.log(rawResponse, 'RESPONSEEEEEEE');
     if(rawResponse === undefined){
       return processReturn({ status: 500, error: {message: 'INTERNAL_ERROR'}}, opts.toasts, opts.t)
     }
