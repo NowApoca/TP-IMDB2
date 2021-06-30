@@ -6,7 +6,7 @@ export default function Root({user, t}) {
   return (
 <>
 <div className='page-container'>
-      <Header />
+      <Header user={user} />
       <Home />
 </div>
 <Footer />

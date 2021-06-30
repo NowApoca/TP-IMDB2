@@ -10,7 +10,7 @@ import hit from '../../../api/hit'
 import endpoints from '../../../api/endpoints'
 
 function getItemsWatchList(setter){
-    hit(endpoints.ITEMS.GET.GET()).then(result => {
+    hit(endpoints.ITEMS.GET.GET({})).then(result => {
         console.log(result)
         if(result.status == 200){
             setter(result.data);
@@ -19,7 +19,7 @@ function getItemsWatchList(setter){
 }
 
 function getItemsMoreRecent(setter){
-    hit(endpoints.ITEMS.GET.GET()).then(result => {
+    hit(endpoints.ITEMS.GET.GET({})).then(result => {
         if(result.status == 200){
             setter(result.data);
         }
@@ -27,7 +27,7 @@ function getItemsMoreRecent(setter){
 }
 
 function getItemsMoreVoted(setter){
-    hit(endpoints.ITEMS.GET.GET()).then(result => {
+    hit(endpoints.ITEMS.GET.GET({})).then(result => {
         if(result.status == 200){
             setter(result.data);
         }
@@ -35,7 +35,7 @@ function getItemsMoreVoted(setter){
 }
 
 function getItemsPremiers(setter){
-    hit(endpoints.ITEMS.GET.GET()).then(result => {
+    hit(endpoints.ITEMS.GET.GET({})).then(result => {
         if(result.status == 200){
             setter(result.data);
         }
@@ -43,7 +43,7 @@ function getItemsPremiers(setter){
 }
 
 function getCelebritiesBirthdays(setter){
-    hit(endpoints.CELEBRITIES.GET.GET()).then(result => {
+    hit(endpoints.CELEBRITIES.GET.GET({})).then(result => {
         if(result.status == 200){
             setter(result.data);
         }
@@ -51,7 +51,7 @@ function getCelebritiesBirthdays(setter){
 }
 
 function getCelebritiesMoreVoted(setter){
-    hit(endpoints.CELEBRITIES.GET.GET()).then(result => {
+    hit(endpoints.CELEBRITIES.GET.GET({})).then(result => {
         if(result.status == 200){
             setter(result.data);
         }

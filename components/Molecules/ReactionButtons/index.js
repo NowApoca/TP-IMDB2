@@ -10,41 +10,39 @@ import { useToasts } from 'react-toast-notifications'
 
 export default function ReactionButtons({
     idComment,
+    entityType,
     likes = 0, likedByUser,
-    favorites = 0, favoritedByUser,
+    favourites = 0, favoritedByUser,
     smiles = 0, smiledByUser,
     frownes = 0, frownedByUser,
 }){
-
     return (<div>
-        <Reaction reactionType='like' idReaction={constants.reactions.likes.id}
+        <Reaction entityType={entityType} reactionType='LIKE' idReaction={constants.reactions.likes.id}
             Symbol={Like} pressed={likedByUser} amount={likes} idComment={idComment} />
-        <Reaction reactionType='favorite' idReaction={constants.reactions.favorites.id}
-            Symbol={Favorite} pressed={favoritedByUser} amount={favorites} idComment={idComment}/>
-        <Reaction reactionType='smile' idReaction={constants.reactions.smiles.id}
+        <Reaction entityType={entityType} reactionType='FAVOURITE' idReaction={constants.reactions.favorites.id}
+            Symbol={Favorite} pressed={favoritedByUser} amount={favourites} idComment={idComment}/>
+        <Reaction entityType={entityType} reactionType='SMILE' idReaction={constants.reactions.smiles.id}
             Symbol={EmojiEmotions} pressed={smiledByUser} amount={smiles} idComment={idComment}/>
-        <Reaction reactionType='frown' idReaction={constants.reactions.frowns.id}
+        <Reaction entityType={entityType} reactionType='FROWN' idReaction={constants.reactions.frowns.id}
             Symbol={Frown} pressed={frownedByUser} amount={frownes} idComment={idComment}/>
     </div>)
 }
 
-function Reaction({Symbol, pressed, amount, reactionType, idReaction, idComment}){
+function Reaction({Symbol, pressed, amount, reactionType, idReaction, idComment, entityType}){
 
     const { addToast } = useToasts()
-
 
     const [isPressed, setIsPressed] = useState(pressed);
     const [currentAmount, setCurrentAmount] = useState(amount);
 
     const handlePress = () => {
         const body = {
-            idReaction,
-            idComment
+            reactionType
         }
-        hit(endpoints.COMMENTS.POST.REACT(), {body,toasts: {
+        hit(endpoints.COMMENTS.POST.REACT(entityType, idComment), {body,toasts: {
             addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
         }}).then(result => {
-            if(result.status == 204){
+            if(result.status == 200){
                 setCurrentAmount(isPressed? currentAmount-1 : currentAmount+1)
                 setIsPressed(!isPressed)
             }

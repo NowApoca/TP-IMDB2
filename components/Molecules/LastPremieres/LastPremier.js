@@ -15,7 +15,7 @@ export default function LastPremier({premiere = {}}){
             <div className='last-premier-movie-banner'>
                 <span className='last-premier-movie-title'>
                     <a href={`/title/${premiere.id}`}>
-                        {premiere.id || 'ALGUN TITULO'}
+                        {premiere.title || 'ALGUN TITULO'}
                     </a>
                 </span>
                 <span className='last-premier-movie-sub-title'>

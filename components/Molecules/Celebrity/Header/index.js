@@ -6,7 +6,7 @@ export default function Header({data = {}}){
         <div className='celebrity-header-container'>
             <img 
                 className='celebrity-header-img'
-                src={'../' + data.image}
+                src={ data.image}
             />
             <div className='celebrity-header-text'>
                 <span className='celebrity-header-text-celebrity'>
@@ -16,7 +16,7 @@ export default function Header({data = {}}){
                     <Rating rating={data.rating} />
                 </div>
                 <span className='celebrity-header-text-subtitle'>
-                    {`${'GENEROS'}: ${data.genres.map(genre => genre)}`}
+                    {`${'GENEROS'}: ${data.genres}`}
                 </span>
             </div>
         </div>

@@ -6,9 +6,9 @@ export default function RelatedMovies({data = []}){
             {data.map(movie => {
                 return (
                     <img onClick={() => {
-                        window.location = `/title/${movie.id}`
+                        window.location = `/title/${movie.item.id}`
                     }}
-                        src={'../' + movie.image}
+                        src={movie.item.image}
                     className='title-related-movies-item-img'/>
                 )
             })}

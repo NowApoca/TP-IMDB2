@@ -12,7 +12,7 @@ export default function Data({data}){
                 {`${'Idioma'}: ${data.language}`}
             </span>
             <span className='general-data-text'>
-                {`${'Fecha de Nacimiento'}: `} <Moment date={data.bornDate} />
+                {`${'Fecha de Nacimiento'}: `} {data.bornDate}
             </span>
             <span className='general-data-text'>
                 {`${'Biografia'}: ${data.biography}`}

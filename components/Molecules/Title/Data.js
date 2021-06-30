@@ -8,16 +8,16 @@ export default function TitleData({data = {}}){
             <span className='general-data-text'>{`${'Resumen'}: ${data.summary}`}</span>
             <span className='general-data-text'>{`${'Director'}: ${data.director}`}</span>
             <span className='general-data-text'>{`${'Productor'}: ${data.productor}`}</span>
-            <span className='general-data-text'>{`${'Escritores'}: ${data.writers.map(
+            <span className='general-data-text'>{`${'Escritores'}: ${data.writers.split(',').map(
                 writer => ` ${writer}`
             )}`}</span>
-            <span className='general-data-text'>{`${'Estrellas'}: ${data.stars.map(
+            <span className='general-data-text'>{`${'Estrellas'}: ${data.stars.split(',').map(
                 star => ` ${star}`
             )}`}</span>
             <Banner text='DETAILS' size='title' />
             <span className='general-data-text'>{`${'Pais de produccion'}: ${data.productorCountry}`}</span>
             <span className='general-data-text'>{`${'Idioma'}: ${data.language}`}</span>
-            <span className='general-data-text'>{`${'Fecha de Estreno'}: `} <Moment date={data.releaseDate}/> </span>
+            <span className='general-data-text'>{`${'Fecha de Estreno'}: `} {data.releaseDate} </span>
             <span className='general-data-text'>{`${'Duracion'}: ${data.duration}`}</span>
             <span className='general-data-text'>{`${'Genero'}: ${data.genre}`}</span>
             <span className='general-data-text'>{`${'Presupuesto'}: ${data.budget}`}</span>

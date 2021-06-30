@@ -1,8 +1,10 @@
 
-import Loader from './Loader'
-
+import CarrouselRating from '../CarrouselRating'
+import {useState} from 'react'
 
 export default function CelebrityCard({celebrity}){
+    const [rating, setRatting] = useState(celebrity.userRating)
+
     return (
     <div className='celebrity-card-container'>
           <img
@@ -12,5 +14,9 @@ export default function CelebrityCard({celebrity}){
         <span className='celebrity-card-text'>{celebrity.name || 'ALGUN NOMBRE'}</span>
         <span className='celebrity-card-text'>{celebrity.type || 'ACTOR'}</span>
         <span className='celebrity-card-text'>{celebrity.age || '44'}</span>
+        <CarrouselRating entityId={celebrity.id} entityType='celebrities'
+            generalRatting={Math.round(celebrity.rating * 10) / 10}
+            rating={rating} setRatting={setRatting}
+        />
     </div>)
 }

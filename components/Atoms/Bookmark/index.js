@@ -11,9 +11,9 @@ export default function BookmarkElement({idItem, isBookmarked, className}){
 
     const handleBookMark = (id) => {
         const body = {
-            id,
+            itemId: id,
         }
-        hit(endpoints.ITEMS.POST.ADD_WATCH_LIST(), {body,toasts: {
+        hit(endpoints.USERS.POST.ADD_WATCH_LIST(), {body,toasts: {
             addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
         }}).then(result => {
             if(result.status == 204){
@@ -22,6 +22,7 @@ export default function BookmarkElement({idItem, isBookmarked, className}){
         })
     }
 
+    console.log(isCurrentBookmarked, 'isCurrentBookmarked')
     return <Bookmark
     style={{
         fontSize: "2rem",

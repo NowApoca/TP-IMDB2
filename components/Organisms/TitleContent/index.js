@@ -20,7 +20,7 @@ export default function TitleContent({titleData, t}) {
         <TitleRelatedMovies data={titleData.relatedMovies}/>
       </div>
       <div className='title-content-item-container'>
-        <TitleComments comments={titleData.comments} />
+        <TitleComments entityId={titleData.data.id} entityType='items' comments={titleData.comments} />
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import CommentsTable from '../CommentsTable'
 
-export default function TitleComments({comments = []}){
+export default function TitleComments({comments = [], entityType, entityId}){
     return (
         <div className='title-comments-container'>
             <div className='title-comments-subtitle'>
@@ -8,7 +8,7 @@ export default function TitleComments({comments = []}){
                     {'Comentarios'}
                 </span>
             </div>
-            <CommentsTable comments={comments} />
+            <CommentsTable entityId={entityId} comments={comments} entityType={entityType} />
         </div>
     )
 }

@@ -7,39 +7,16 @@ import { useToasts } from 'react-toast-notifications'
 export default function Configuration(){
     const { addToast } = useToasts()
 
-    const [newUser, setNewUser] = useState('');
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
-
-    const handleChangeUser = () => {
-        const body = {
-            newUser,
-        }
-        hit(endpoints.USERS.PATCH.USER_NAME(), { body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
-        }}).then(result => {
-
-        })
-    }
 
     const handleChangePassword = () => {
         const body = {
             oldPassword,
             newPassword,
-            confirmNewPassword,
         }
         hit(endpoints.USERS.PATCH.PASSWORD(), { body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
-        }}).then(result => {
-            if(result.status == 204){
-                window.location = '/'
-            }
-        })
-    }
-
-    const logoutAllDevices = () => {
-        hit(endpoints.USERS.POST.LOG_OUT_ALL_DEVICES(), { toasts: {
             addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
         }}).then(result => {
             if(result.status == 204){
@@ -51,16 +28,6 @@ export default function Configuration(){
     let error = newPassword != confirmNewPassword? 'LAS PASSWORDS DEBEN COINCIDIR' : ''
 
     return (<div className='configuration-container'>
-        <div className='configuration-form-container'>
-            <span className='configuration-form-title-text'>CAMBIAR NOMBRE DE USUARIO</span>
-            <input onInput={e => setNewUser(e.target.value)} value={newUser} type='text' className='configuration-form-item' />
-            <Button 
-                text='Confirmar cambio'
-                onClick ={handleChangeUser}
-                variant='success'
-                className='configuration-form-button'
-            />
-        </div>
 
         <div className='configuration-form-container'>
             <span className='configuration-form-title-text'>CAMBIAR PASSWORD</span>
@@ -74,16 +41,6 @@ export default function Configuration(){
                 text='Confirmar cambio de password'
                 onClick ={handleChangePassword}
                 variant='success'
-                className='configuration-form-button'
-            />
-        </div>
-
-        <div className='configuration-form-container'>
-            <span className='configuration-form-title-text'>CAMBIAR NOMBRE DE USUARIO</span>
-            <Button 
-                text='Confirmar cambio de password'
-                onClick ={logoutAllDevices}
-                variant='danger'
                 className='configuration-form-button'
             />
         </div>

@@ -22,6 +22,18 @@
 .comment-parent-container{
     display: flex;
     flex-direction: row;
+    width: 100%;
+}
+
+.comment-username-container{
+    width: 15%;
+}
+.comment-child-container{
+    width: 70%;
+}
+
+.comment-username-span{
+    color: rgb(16, 107, 59);
 }
 
 .add-child-comment-container{

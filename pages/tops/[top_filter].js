@@ -13,15 +13,18 @@ export default function UserTops({user, t}) {
 
   const { top_filter } = router.query;
 
-  const [items, setItems] = useState([]);
+  const [entities, setEntities] = useState([]);
 
   useEffect(() => {
-    hit(endpoints.ITEMS.GET.TOP(top_filter)).then(result => {
-      if(result.status == 200){
-        setItems(result.data)
-      }
-    })
-  }, [])
+    if(top_filter){
+      hit(endpoints.RATINGS.GET.GET(top_filter, {})).then(result => {
+        console.log(result, 'result')
+        if(result.status == 200){
+          setEntities(result.data)
+        }
+      })
+    }
+  }, [top_filter])
 
   return (
 
@@ -29,7 +32,7 @@ export default function UserTops({user, t}) {
 <div className='page-container'>
       <Header />
       <Tops
-        tops={items} filter={top_filter} />
+        tops={entities} filter={top_filter} />
 </div>
 <Footer />
 </>

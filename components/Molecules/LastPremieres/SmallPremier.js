@@ -14,11 +14,11 @@ export default function SmallPremier({premiere}){
             <div className='small-premier-data-container'>
                 <span className='small-premier-title'>
                     <a href={`/title/${premiere.id}`}>
-                        {premiere.id || 'ALGUN TITULO'}
+                        {premiere.title || 'ALGUN TITULO'}
                     </a>
                 </span>
                 <span className='small-premier-text'>
-                    {premiere.id || 'ALGUN TEXTO'}
+                    {premiere.subtitle || 'ALGUN TEXTO'}
                 </span>
             </div>
                 

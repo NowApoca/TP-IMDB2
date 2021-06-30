@@ -8,17 +8,17 @@ export default function TitleHeader({data = {}}){
                 <Bookmark isBookmarked={data.isBookmarked} idItem={data.id} />
                 <img 
                     className='title-header-img'
-                    src={'../' + data.image} />
+                    src={data.image} />
 
             </div>
 
 
             <div className='title-header-text'>
                 <span className='title-header-text-title'>
-                    {`${data.id || 'ALGUN TITULO'} (${data.year || '1999'})`}
+                    {`${data.title || 'ALGUN TITULO'} (${data.year || '1999'})`}
                 </span>
                 <div className='title-header-text-rating'>
-                    <Rating rating={data.rating} />
+                    <Rating rating={Math.round(data.rating * 10) / 10} />
                 </div>
                 <span className='title-header-text-subtitle'>
                     {data.subtitle || 'ALGUN TITULO'}

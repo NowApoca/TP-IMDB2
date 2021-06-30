@@ -7,16 +7,17 @@ import hit from '../../../api/hit'
 import endpoints from '../../../api/endpoints'
 import { useToasts } from 'react-toast-notifications'
 
-export default function CarrouselRating({user, item_id, generalRatting,
+export default function CarrouselRating({user, entityId, generalRatting, entityType,
     t, rating, setRatting}){
     const { addToast } = useToasts()
 
     const handleOnRate = (points) => {
         const body = {
             rating: points,
-            item_id: item_id,
+            entityId: entityId,
+            "type":entityType
         }
-        hit(endpoints.ITEMS.POST.POST_RATING(), {t, body,toasts: {
+        hit(endpoints.RATINGS.POST.POST_RATING(), {t, body,toasts: {
             addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
         }}).then(result => {
             if(result.status == 200){

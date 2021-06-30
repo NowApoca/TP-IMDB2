@@ -33,17 +33,17 @@ export default function CarrouselItem({item, type, t}){
                 window.location = `/title/${item.id}`
             }}
                 className='carrousel-item-image'
-                src={'../' + item.image}
+                src={item.image}
             />
             {
-                type != 'users' && <CarrouselRating
-                    generalRatting={item.rating}
+                type != 'users' && <CarrouselRating entityId={item.id}
+                    generalRatting={Math.round(item.rating * 10) / 10}
                     rating={rating} setRatting={setRatting}
                 />
             }
             <span className='carrousel-item-title'>
                 <a href={`/title/${item.id }`}>
-                    {item.id }
+                    {item.title }
                 </a>
             </span>
         </div>

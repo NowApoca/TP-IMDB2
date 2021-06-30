@@ -7,37 +7,31 @@ import endpoints from '../../api/endpoints'
 import {useState, useEffect} from 'react'
 
 
-function getMovies(setter){
-  hit(endpoints.ITEMS.GET.GET()).then(result => {
+function getMovies(setter, name_id){
+  hit(endpoints.ITEMS.GET.GET({filter: name_id})).then(result => {
       if(result.status == 200){
-          setter(result.data);
+          const items = []
+          result.data.map(item => {
+            if(item != null){
+              items.push(item)
+            }
+          })
+          setter(items);
       }
   })
 }
 
 
-function getSeries(setter){
-  hit(endpoints.ITEMS.GET.GET()).then(result => {
+function getCelebrities(setter, name_id){
+  hit(endpoints.CELEBRITIES.GET.GET({filter: name_id})).then(result => {
       if(result.status == 200){
-          setter(result.data);
-      }
-  })
-}
-
-
-function getCelebrities(setter){
-  hit(endpoints.CELEBRITIES.GET.GET()).then(result => {
-      if(result.status == 200){
-          setter(result.data);
-      }
-  })
-}
-
-
-function getUsers(setter){
-  hit(endpoints.USERS.GET.GET()).then(result => {
-      if(result.status == 200){
-          setter(result.data);
+        const celebrities = []
+        result.data.map(celebrity => {
+          if(celebrity != null){
+            celebrities.push(celebrity)
+          }
+        })
+        setter(celebrities);
       }
   })
 }
@@ -48,16 +42,12 @@ export default function Title({user, t}) {
   const {name_id} = router.query
 
   const [movies, setMovies] = useState([])
-  const [series, setSeries] = useState([])
   const [celebrities, setCelebrities] = useState([])
-  const [users, setUsers] = useState([])
 
   useEffect(() => {
     if(name_id) {
-      getMovies(setMovies)
-      getSeries(setSeries)
-      getCelebrities(setCelebrities)
-      getUsers(setUsers)
+      getMovies(setMovies, name_id)
+      getCelebrities(setCelebrities, name_id)
     }
   }, [name_id])
 
@@ -70,11 +60,6 @@ export default function Title({user, t}) {
         label={'movies'}
         type={'movies'}
         data={movies}
-        />
-      <FilterSearchResult 
-        label={'series'}
-        type={'series'}
-        data={series}
         />
       <FilterSearchResult 
         label={'celebrities'}

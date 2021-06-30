@@ -20,15 +20,16 @@ function MyApp({ Component, t }) {
   
   useEffect(() => {
     if (process.browser) {
-      //hit(APIEndpoints.USERS.GET.SESSION()).then( result => {
-      //  if(result.status == 200){
-      //    setUser(result.data);
-      //  }else{
-      //    localStorage.removeItem('ortAccessToken')
-      //    setUser(notIdentifiedUser);
-      //  }
-      //  setLoading(false)
-      //})
+      hit(APIEndpoints.USERS.GET.SESSION()).then( result => {
+        console.log(result, 'RESULT EN GET SESSIONS')
+        if(result.status == 200){
+          setUser(result.data);
+        }else{
+          //localStorage.removeItem('ortAccessToken')
+          setUser(notIdentifiedUser);
+        }
+        setLoading(false)
+      })
       setLoading(false)
     }
   }, []);

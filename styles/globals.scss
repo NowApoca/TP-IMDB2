@@ -49,3 +49,27 @@ body {
 .page-container{
   min-height: 100vh;
 }
+
+.textareacomment{
+  width: 80%;
+}
+
+.text-area-comment-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.text-area-comment{
+  width: 70%;
+}
+
+.administration-item-image{
+  height: 60px;
+  width: 60px;
+}
+
+.upload-item-administration-image{
+  margin-left: 35%;
+  width: 30%;
+  height: auto;
+}

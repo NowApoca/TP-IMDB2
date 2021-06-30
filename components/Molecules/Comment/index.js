@@ -8,71 +8,30 @@ import hit from '../../../api/hit';
 import endpoints from '../../../api/endpoints';
 import { useToasts } from 'react-toast-notifications'
 
-export default function Comment({comment}){
+export default function Comment({comment, entityType}){
 
     const [childComments, setChildComments] = useState(comment.comments || []);
     const [isCommentChildPressed, setIsCommentChildPressed] = useState(false);
     const { addToast } = useToasts()
 
-    const handleAddComment = (text) => {
-        const body = {
-            text,
-            idParentComment: comment.id,
-        }
-        hit(endpoints.COMMENTS.POST.COMMENT(), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
-        }}).then(result => {
-            if(result.status == 200){
-                const childCommentsArr = [].concat(childComments)
-                childCommentsArr.push({
-                    comment: text,
-                    isDeleted: false,
-                    id: result.data.id,
-                    likes: 0,
-                    likedByUser: false,
-                    favorites: 0,
-                    favoritedByUser: false,
-                    smiles: 0,
-                    smiledByUser: false,
-                    frownes: 0,
-                    frownedByUser: false,
-                })
-                setChildComments(childCommentsArr)
-            }
-        })
-    }
-
     return (
         <div className='comment-container'>
             <div className='comment-parent-container'>
-                <div style={{display: 'flex', flexDirection: 'row'}}>
-                    {childComments.length}
-                    <Reply onClick={
-                        () => setIsCommentChildPressed(!isCommentChildPressed)
-                    } />
+                <div className='comment-username-container' >
+                    <span className='comment-username-span'>{comment.userName}</span> dice:
                 </div>
                 <div className='comment-child-container'>
                     <span>{comment.isDeleted? 'COMMENT_DELETED' : comment.comment}</span>
                     <div className='comment-buttons-container'>
-                        
                         <ReactionButtons
+                            entityType={entityType}
                             idComment={comment.id}
-                            likes={comment.likes} likedByUser={comment.likedByUser}
-                            favorites={comment.favorites} favoritedByUser={comment.favoritedByUser}
-                            smiles={comment.smiles} smiledByUser={comment.smiledByUser}
-                            frownes={comment.frownes} frownedByUser={comment.frownedByUser}
-                        
+                            likes={comment.likes} likedByUser={comment.isLikedByUser}
+                            favourites={comment.favourites} favoritedByUser={comment.isFavouritedByUser}
+                            smiles={comment.smiles} smiledByUser={comment.isSmiledByUser}
+                            frownes={comment.frownes} frownedByUser={comment.isFrownedByUser}
                         />
                     </div>
-                    {
-                        (!comment.isDeleted && isCommentChildPressed) && <AddChildComment onClick={handleAddComment} />
-                    }
-                    {
-                        childComments.length > 0 &&         
-                        <div className='comment-subcomments'>
-                            <CommentTables comments={childComments} />
-                        </div>
-                    }
                 </div>
             </div>    
         </div>

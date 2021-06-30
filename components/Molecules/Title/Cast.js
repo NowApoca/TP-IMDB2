@@ -3,8 +3,8 @@ import OurTable from "../OurTable";
 export default function TitleCast({ data = [] }) {
   const columns = [
     { name: "Actor", field: "actor" },
-    { name: "Personajes", field: "characters" },
   ];
+
   const columnsOrder = columns.map((column) => column.field);
 
   const rows = data.map((element) => {
@@ -13,19 +13,18 @@ export default function TitleCast({ data = [] }) {
       values: {
         actor: <div className='title-cast-actor-profile'>
             <img
-                src={ `../${element.image}`}
+                src={ `${element.celebrity.image}`}
                 className='title-cast-actor-profile-image'
             />
             <span className='title-cast-actor-profile-text'>
-                {element.surname}
+                {element.celebrity.surname}
             </span>
             <span className='title-cast-actor-profile-text'>
-                {element.name}
+                {element.celebrity.name}
             </span>
             
             
-        </div>,
-        characters: element.characters.map(character => character)
+        </div>
       },
     };
   });

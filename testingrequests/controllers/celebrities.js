@@ -10,7 +10,7 @@ module.exports = (app, agent) => {
     )
   })
   
-    app.delete(`/${baseUrl}/:id`, async function (req, res) {
+    app.post(`/${baseUrl}/:id`, async function (req, res) {
         const {id} = req.params;
         const backendResponse = await axios.delete(`${process.env.BACKEND_HOST}/${baseUrl}/${id}`,  {httpsAgent: agent}, {
             httpsAgent: agent, headers: {Authorization: req.headers.authorization}
@@ -28,8 +28,8 @@ module.exports = (app, agent) => {
         )
     })
     app.get(`/${baseUrl}`, async function (req, res) {
-      const {offset, limit, orderBy} = req.query;
-      const backendResponse = await axios.get(`${process.env.BACKEND_HOST}/${baseUrl}?limit=${limit || ''}&offset=${offset || ''}&orderBy=${orderBy || ''}`, { httpsAgent: agent, headers: {Authorization: req.headers.authorization} });
+      const {offset, limit, orderBy, filter} = req.query;
+      const backendResponse = await axios.get(`${process.env.BACKEND_HOST}/${baseUrl}?limit=${limit || ''}&offset=${offset || ''}&orderBy=${orderBy || ''}&filter=${filter || ''}`, { httpsAgent: agent, headers: {Authorization: req.headers.authorization} });
       res.status(backendResponse.data.status).json(
           backendResponse.data
         )

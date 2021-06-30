@@ -16,12 +16,16 @@ export default function Title({user, t}) {
   const [itemData, setItemData] = useState(null)
 
   useEffect( () => {
-    hit(endpoints.ITEMS.GET.GET_DATA(title_id)).then(result => {
-      if(result.status == 200){
-        setItemData(result.data)
-      }
-    })
-  }, [])
+    if(title_id){
+      hit(endpoints.ITEMS.GET.GET_DATA(title_id)).then(result => {
+        console.log(result, 'result.status == 200')
+        if(result.status == 200){
+          setItemData(result.data)
+        }
+      })
+
+    }
+  }, [title_id])
 
   return (
 <>

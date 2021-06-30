@@ -15,7 +15,7 @@ export default function TitleContent({celebrityData, t}) {
         <RelatedMovies data={celebrityData.relatedMovies}/>
       </div>
       <div className='title-content-item-container'>
-        <Comments comments={celebrityData.comments} />
+        <Comments entityId={celebrityData.data.id} entityType='celebrities' comments={celebrityData.comments} />
       </div>
     </div>
   )
