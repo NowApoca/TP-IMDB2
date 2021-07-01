@@ -3,6 +3,7 @@
 
 .carrousel-item-container{
     min-width: 20vw;
+    max-width: 20vw;
     background-color: var(--primary-color);
     border-radius: $border-radius-md;
     position: relative;

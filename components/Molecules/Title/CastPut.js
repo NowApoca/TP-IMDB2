@@ -53,7 +53,6 @@ export default function CastPut({ data = [], setCast, entityType, entityId }) {
   }
 
   const deleteCast = (index, element) => {
-    console.log(element)
     hit(endpoints.LINKS.POST.UNLINK_WITH_CELEBRITY(entityId, entityType), {body: {
       celebrityIds: [element.celebrityId]
     },toasts: {

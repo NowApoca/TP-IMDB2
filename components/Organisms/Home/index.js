@@ -11,7 +11,6 @@ import endpoints from '../../../api/endpoints'
 
 function getItemsWatchList(setter){
     hit(endpoints.ITEMS.GET.GET({})).then(result => {
-        console.log(result)
         if(result.status == 200){
             setter(result.data);
         }

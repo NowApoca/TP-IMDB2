@@ -1,13 +1,12 @@
 import CarrouselItem from './CarrouselItem'
 import Loader from './CarrouselLoader'
 
-export default function CarrouselHorizontal({items, type, user}){
-    console.log(user, 'ACA NO DEBO LLEGAR 2')
+export default function CarrouselHorizontal({items, entityType, type, user}){
     return (
         <div className='horizontal-carrousel-container'>
             {
                 items && items.map(item => {
-                    return <CarrouselItem user={user} type={type} item={item} />
+                    return <CarrouselItem entityType={entityType} user={user} type={type} item={item} />
                 })
             }
             {

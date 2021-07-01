@@ -8,7 +8,7 @@ import {useState, useEffect} from 'react'
 
 
 function getMovies(setter, name_id){
-  hit(endpoints.ITEMS.GET.GET({filter: name_id})).then(result => {
+  hit(endpoints.ITEMS.GET.GET({filter: name_id, limit: 1000})).then(result => {
       if(result.status == 200){
           const items = []
           result.data.map(item => {
@@ -23,8 +23,9 @@ function getMovies(setter, name_id){
 
 
 function getCelebrities(setter, name_id){
-  hit(endpoints.CELEBRITIES.GET.GET({filter: name_id})).then(result => {
+  hit(endpoints.CELEBRITIES.GET.GET({filter: name_id, limit: 1000})).then(result => {
       if(result.status == 200){
+        console.log(result, 'RESUUUUULT')
         const celebrities = []
         result.data.map(celebrity => {
           if(celebrity != null){
@@ -57,13 +58,13 @@ export default function Title({user, t}) {
 <div className='page-container'>
       <Header user={user} nameId={name_id} />
       <FilterSearchResult 
-        label={'movies'}
-        type={'movies'}
+        label={'Peliculas o series'}
+        type={'items'}
         data={movies}
         user={user}
         />
       <FilterSearchResult 
-        label={'celebrities'}
+        label={'Celebridades'}
         type={'celebrities'}
         data={celebrities}
         user={user}

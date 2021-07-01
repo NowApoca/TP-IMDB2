@@ -14,10 +14,9 @@ export default function Searcher({nameId}){
     return (
         <div className='searcher-container'>
             <input value={currentName} onInput={e => setCurrentName(e.target.value)}
-                className='searcher-input' type='text' placeholder={'SEARCH'}
+                className='searcher-input' type='text' placeholder={'BUSCAR'}
             />
             <Search onClick={() => {
-                console.log('ESTOY ACA?', `/search/${currentName}`)
                 window.location = `/search/${currentName}`
             }} className='searcher-icon' />
         </div>

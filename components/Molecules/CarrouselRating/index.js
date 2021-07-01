@@ -17,7 +17,6 @@ export default function CarrouselRating({user, entityId, generalRatting, entityT
             entityId: entityId,
             "type":entityType
         }
-        console.log(body, 'ESTE BOOODY')
         hit(endpoints.RATINGS.POST.POST_RATING(), {t, body,toasts: {
             addToast, successMessage: 'PUNTUACION POSTEADA'
         }}).then(result => {

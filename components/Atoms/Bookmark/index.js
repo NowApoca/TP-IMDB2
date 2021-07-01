@@ -16,13 +16,12 @@ export default function BookmarkElement({idItem, isBookmarked, className}){
         hit(endpoints.USERS.POST.ADD_WATCH_LIST(), {body,toasts: {
             addToast, successMessage: 'AGREGADO A LA WATCHLIST'
         }}).then(result => {
-            if(result.status == 204){
+            if(result.status == 201 || result.status == 204){
                 setIsBookMarked(!isCurrentBookmarked)
             }
         })
     }
 
-    console.log(isCurrentBookmarked, 'isCurrentBookmarked')
     return <Bookmark
     style={{
         fontSize: "2rem",

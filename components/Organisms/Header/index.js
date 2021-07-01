@@ -64,6 +64,11 @@ export default function Header({nameId, user}){
                  </button>
             }
             {
+                user && user.role == 'NOT_USER' && <button onClick={() => window.location = '/signup'} className='header-menu-icon'>
+                        REGISTRARSE
+                 </button>
+            }
+            {
                 user && user.role == 'NOT_USER' && <button onClick={() => window.location = '/login'} className='header-menu-icon'>
                         INGRESAR
                  </button>

@@ -10,7 +10,7 @@ module.exports = Object.freeze({
       ADMINISTRATOR: () => ({ method: "post", url: `/users/administrator` }),
       LOGOUT: () => ({ method: "post", url: `/logout`, authentication: true }),
       LOG_OUT_ALL_DEVICES: () => ({ method: "post", url: `/users/logout/all/devices` }),
-      ADD_WATCH_LIST: () => ({ method: "post", url: `/users/watchlist`, authentication: true }),
+      ADD_WATCH_LIST: () => ({ method: "post", url: `/users/add/watchlist`, authentication: true }),
     },
     PATCH: {
       PASSWORD: () => ({ method: "post", url: `/users/change/password`, authentication: true }),

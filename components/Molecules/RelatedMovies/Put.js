@@ -53,7 +53,6 @@ export default function MoviePut({ data = [], setRelatedMovies, entityType, enti
   }
 
   const deleteCast = (index, element) => {
-    console.log(element)
     hit(endpoints.LINKS.POST.UNLINK_WITH_ITEM(entityId, entityType), {body: {
       itemIds: [element.itemId]
     },toasts: {

@@ -57,7 +57,7 @@ module.exports = (app, agent) => {
             backendResponse.data
         )
     })
-    app.post(`/${baseUrl}/watchlist`, async function (req, res) {
+    app.post(`/${baseUrl}/add/watchlist`, async function (req, res) {
         const backendResponse = await axios.post(`${process.env.BACKEND_HOST}/${baseUrl}/watchlist`,  req.body, { httpsAgent: agent, headers: {Authorization: req.headers.authorization} });
         res.status(backendResponse.data.status).json(
             backendResponse.data

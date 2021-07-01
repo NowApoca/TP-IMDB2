@@ -13,6 +13,7 @@
     height: 100%;
     position: absolute;
     object-fit: cover;
+    object-position: top;
     cursor: pointer;
 }
 
@@ -22,8 +23,8 @@
     position: absolute;
     bottom: 2rem;
     height: 20%;
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--base-color);
+    color: black;
     display: flex;
     flex-direction: row;
     align-items: center;

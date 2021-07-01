@@ -25,7 +25,7 @@ export default function Popup({onClick, info = {}, Button,type}){
                         <Card bg={type}>
                             <Card.Header className={'card-header'}>
                                 <h3 className={'card-header-title'}>
-                                    {info.header || "ATTENTION"}
+                                    {info.header || "ATENCION"}
                                 </h3>
                                 <div className='card-header-button'>
                                     <CancelIcon onClick={() => { setPopup(false)}} fontSize="large" />
@@ -39,7 +39,7 @@ export default function Popup({onClick, info = {}, Button,type}){
                                     onClick()
                                     setPopup(false)
                                     }} className={'popup-confirm-button'}>
-                                        {"CONFIRM"}
+                                        {"CONFIRMAR"}
                                     <CheckCircleIcon onClick={() => {}} style={{ marginLeft:'4%' }} />
                             </div>
                          </Card.Body>

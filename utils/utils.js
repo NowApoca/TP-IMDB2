@@ -8,7 +8,7 @@ function showToasts(addToast, successMessage, result, t){
         return;
     }
     if (result.error) {
-      addToast(<div>{t(result.error.message)}</div>, { appearance: "error" });
+      addToast(<div>{t(result.error)}</div>, { appearance: "error" });
       return;
     }
     if(successMessage && result.status == 200 || result.status == 201 || result.status == 204){

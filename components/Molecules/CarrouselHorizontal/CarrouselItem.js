@@ -5,7 +5,7 @@ import CarrouselRating from '../CarrouselRating'
 import {useState} from 'react'
 import { useToasts } from 'react-toast-notifications'
 
-export default function CarrouselItem({item, type, t, user}){
+export default function CarrouselItem({item, type, t, user, entityType}){
 
 
     const [rating, setRatting] = useState(item.userRating)
@@ -37,7 +37,7 @@ export default function CarrouselItem({item, type, t, user}){
                 src={item.image}
             />
             {
-                type != 'users' && <CarrouselRating entityType='items' user={user} entityId={item.id}
+                type != 'users' && <CarrouselRating entityType={entityType || 'items'} user={user} entityId={item.id}
                     generalRatting={Math.round(item.rating * 10) / 10}
                     rating={rating} setRatting={setRatting}
                 />

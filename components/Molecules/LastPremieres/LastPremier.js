@@ -3,7 +3,6 @@
 
 
 export default function LastPremier({premiere = {}}){
-    console.log(premiere)
     return (
         <div className='last-premiere-container'>
             <img onClick={() => {

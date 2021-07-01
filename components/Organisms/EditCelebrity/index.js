@@ -17,8 +17,6 @@ export default function UploadItem({celebrityData, user}){
     const [biography, setBiography] = useState(celebrityData.data.biography)
     const [bornDate, setBornDate] = useState(celebrityData.data.bornDate)
     const [genres, setGenres] = useState(celebrityData.data.genres)
-    
-    console.log(celebrityData, 'celebrityData')
 
     const [cast, setCast] = useState(celebrityData.relatedStars.map(cele => {
         return {

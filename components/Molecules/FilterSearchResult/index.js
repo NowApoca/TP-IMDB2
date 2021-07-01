@@ -8,7 +8,7 @@ export default function FilterSearchResult({data, label, type, user}){
             data.length == 0?
                 <span>{'NO SE HAN ENCONTRADO RESULTADOS'}</span>
             :
-            <CarrouselHorizontal user={user} type={type} items={data} />
+            <CarrouselHorizontal entityType={type} user={user} type={type} items={data} />
         }
     </div>)
 }
