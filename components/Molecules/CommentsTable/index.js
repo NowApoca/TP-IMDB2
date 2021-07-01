@@ -16,7 +16,7 @@ export default function TitleComments({ comments = [], entityType, entityId }) {
       entityId: entityId
     }
     hit(endpoints.COMMENTS.POST.COMMENT(), {body,toasts: {
-        addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+        addToast, successMessage: 'COMENTARIO POSTEADO'
     }}).then(result => {
         if(result.status == 201){
           window.location.reload()

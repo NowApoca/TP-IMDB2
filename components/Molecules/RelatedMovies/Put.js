@@ -28,7 +28,7 @@ export default function MoviePut({ data = [], setRelatedMovies, entityType, enti
   }, [])
 
   const columns = [
-    { name: "Actor", field: "actor" },
+    { name: "Pelicula o serie", field: "actor" },
     { name: "Guardar", field: "save" },
     { name: "Borrar", field: "erase" },
   ];
@@ -43,7 +43,7 @@ export default function MoviePut({ data = [], setRelatedMovies, entityType, enti
       hit(endpoints.LINKS.POST.LINK_WITH_ITEM(entityId, entityType), {body: {
         itemIds: [element.itemId]
       },toasts: {
-        addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+        addToast, successMessage: 'PELICULA O SERIE LINKEADA'
     }}).then(result => {
         if(result.status == 201){
 
@@ -57,7 +57,7 @@ export default function MoviePut({ data = [], setRelatedMovies, entityType, enti
     hit(endpoints.LINKS.POST.UNLINK_WITH_ITEM(entityId, entityType), {body: {
       itemIds: [element.itemId]
     },toasts: {
-      addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+      addToast, successMessage: 'PELICULA O SERIE DESVINCULADA'
   }}).then(result => {
       if(result.status == 201){
         const castCopy = [].concat(data)
@@ -84,13 +84,13 @@ export default function MoviePut({ data = [], setRelatedMovies, entityType, enti
           }
       </select>,
       save: <Button 
-      text='Bloquear'
+      text='Guardar'
       onClick ={() => saveCast(element)}
-      variant='danger'
+      variant='primary'
       className='configuration-form-button'
   />,
       erase: <Button 
-      text='Bloquear'
+      text='Borrar'
       onClick ={() => deleteCast(index, element)}
       variant='danger'
       className='configuration-form-button'

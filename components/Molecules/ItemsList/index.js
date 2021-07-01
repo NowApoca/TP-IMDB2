@@ -12,7 +12,7 @@ export default function UserTable({data}){
 
   const deleteItem = (id) => {
     hit(endpoints.ITEMS.DELETE(id), {body: {},toasts: {
-        addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+        addToast, successMessage: 'ITEM BORRADO'
     }}).then(result => {
         if(result.status == 204){
             window.location.reload()

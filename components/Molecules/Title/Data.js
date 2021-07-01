@@ -4,8 +4,9 @@ import Moment from '../../Atoms/Moment'
 export default function TitleData({data = {}}){
     return (
         <div className='general-data-container'>
-            <Banner text='PEOPLE' size='title' />
-            <span className='general-data-text'>{`${'Resumen'}: ${data.summary}`}</span>
+        <Banner text='RESUMEN' size='title' />
+            <span className='general-data-text'>{`${data.summary}`}</span>
+            <Banner text='GENTE INVOLUCRADA' size='title' />
             <span className='general-data-text'>{`${'Director'}: ${data.director}`}</span>
             <span className='general-data-text'>{`${'Productor'}: ${data.productor}`}</span>
             <span className='general-data-text'>{`${'Escritores'}: ${data.writers.split(',').map(
@@ -14,7 +15,7 @@ export default function TitleData({data = {}}){
             <span className='general-data-text'>{`${'Estrellas'}: ${data.stars.split(',').map(
                 star => ` ${star}`
             )}`}</span>
-            <Banner text='DETAILS' size='title' />
+            <Banner text='DETALLES' size='title' />
             <span className='general-data-text'>{`${'Pais de produccion'}: ${data.productorCountry}`}</span>
             <span className='general-data-text'>{`${'Idioma'}: ${data.language}`}</span>
             <span className='general-data-text'>{`${'Fecha de Estreno'}: `} {data.releaseDate} </span>

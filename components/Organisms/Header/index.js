@@ -21,7 +21,7 @@ export default function Header({nameId, user}){
 
     const handleLogOut = () => {
         hit(endpoints.USERS.POST.LOGOUT(), {body: {},toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'SALIDA EXITOSA'
         }}).then(result => {
             if(result.status == 204){
                 window.location = '/'
@@ -42,9 +42,9 @@ export default function Header({nameId, user}){
                   <MenuItem onClick={() => {window.location = '/administration/create/administrator'}} value="home">Crear Administrador</MenuItem>
                   <MenuItem onClick={() => {window.location = '/administration/create/item'}} value="home">Crear Pelicula o Serie</MenuItem>
                   <MenuItem onClick={() => {window.location = '/administration/create/celebrity'}} value="home">Crear Celebridad</MenuItem>
-                  <MenuItem onClick={() => {window.location = '/administration/create/celebrity'}} value="home">Peliculas y Series</MenuItem>
-                  <MenuItem onClick={() => {window.location = '/administration/create/celebrity'}} value="home">Celebridades</MenuItem>
-                  <MenuItem onClick={() => {window.location = '/administration/create/celebrity'}} value="home">Usuarios</MenuItem>
+                  <MenuItem onClick={() => {window.location = '/administration/items'}} value="home">Peliculas y Series</MenuItem>
+                  <MenuItem onClick={() => {window.location = '/administration/celebrities'}} value="home">Celebridades</MenuItem>
+                  <MenuItem onClick={() => {window.location = '/administration/users'}} value="home">Usuarios</MenuItem>
                   <MenuItem onClick={() => {}} value="home">Administracion</MenuItem>
                 </Select>
                 </button>

@@ -25,9 +25,9 @@ export default function Title({user, t}) {
   return (
 <>
 <div className='page-container'>
-      <Header />
+      <Header user={user} />
       {
-        celebrityData && <CelebrityContent celebrityData={celebrityData} />
+        celebrityData && <CelebrityContent user={user} celebrityData={celebrityData} />
       }
 </div>
 <Footer />

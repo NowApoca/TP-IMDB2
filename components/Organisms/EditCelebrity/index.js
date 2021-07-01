@@ -8,32 +8,15 @@ import RelatedMoviesPut from '../../Molecules/RelatedMovies/Put'
 
 export default function UploadItem({celebrityData, user}){
     const { addToast } = useToasts()
-
-    const [title, setTitle] = useState(celebrityData.data.title)
-    const [image, setImage] = useState(celebrityData.data.image)
-    const [subtitle, setSubtitle] = useState(celebrityData.data.subtitle)
-    const [year, setYear] = useState(celebrityData.data.year)
-    const [summary, setSummary] = useState(celebrityData.data.summary)
-    const [director, setDirector] = useState(celebrityData.data.director)
-    const [productor, setProductor] = useState(celebrityData.data.productor)
-    const [writers, setWriters] = useState(celebrityData.data.writers)
-    const [stars, setStars] = useState(celebrityData.data.stars)
-    const [productorCountry, setProductorCountry] = useState(celebrityData.data.productorCountry)
-    const [language, setLanguage] = useState(celebrityData.data.language)
-    const [releaseDate, setReleaseDate] = useState(celebrityData.data.releaseDate)
-    const [duration, setDuration] = useState(celebrityData.data.duration)
-    const [genre, setGenre] = useState(celebrityData.data.genre)
-    const [budget, setBudget] = useState(celebrityData.data.budget)
-    const [earns, setEarns] = useState(celebrityData.data.earns)
     
-    "name":"new name",
-    "image":"image",
-    "surname":"surname",
-    "country":"country",
-    "language":"language",
-    "biography":"biography",
-    "bornDate":"bornDate",
-    "genres":"genres"
+    const [name, setName] = useState(celebrityData.data.name)
+    const [image, setImage] = useState(celebrityData.data.image)
+    const [surname, setSurname] = useState(celebrityData.data.surname)
+    const [country, setCountry] = useState(celebrityData.data.country)
+    const [language, setLanguage] = useState(celebrityData.data.language)
+    const [biography, setBiography] = useState(celebrityData.data.biography)
+    const [bornDate, setBornDate] = useState(celebrityData.data.bornDate)
+    const [genres, setGenres] = useState(celebrityData.data.genres)
     
     console.log(celebrityData, 'celebrityData')
 
@@ -52,34 +35,36 @@ export default function UploadItem({celebrityData, user}){
 
     const handlePostItem = () => {
         const body = {
+            name,
             image,
-            subtitle,
-            year,
-            summary,
-            director,
-            productor,
-            writers,
-            stars,
-            productorCountry,
+            surname,
+            country,
             language,
-            releaseDate,
-            duration,
-            genre,
-            budget,
-            earns,
+            biography,
+            bornDate,
+            genres,
         }
-        hit(endpoints.ITEMS.PUT.ITEM(celebrityData.data.id), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+        hit(endpoints.CELEBRITIES.PUT.CELEBRITY(celebrityData.data.id), {body,toasts: {
+            addToast, successMessage: 'CELEBRIDAD EDITADA'
         }}).then(result => {
             if(result.status == 204){
-                window.location = '/administration/update/item/' + celebrityData.data.id
+                window.location = '/administration/update/celebrity/' + celebrityData.data.id
             }
         })
     }
 
     return (<div className='upload-celebrity-container'>
     
-        <span className='upload-celebrity-text'>{title}</span>
+    
+        <span className='upload-celebrity-text'>NOMBRE</span>
+        <input type='text' value={name} onInput={e => {
+            setName(e.target.value)
+        }} className='upload-celebrity-input' placeholder='title' />
+    
+        <span className='upload-celebrity-text'>APELLIDO</span>
+        <input type='text' value={surname} onInput={e => {
+            setSurname(e.target.value)
+        }} className='upload-celebrity-input' placeholder='title' />
     
         <span className='upload-celebrity-text'>IMAGEN</span>
         <input type='text' value={image} onInput={e => {
@@ -92,97 +77,70 @@ export default function UploadItem({celebrityData, user}){
         {
             image && <img className='upload-item-administration-image' src={image} ></img>
         }
-    
-        <span className='upload-celebrity-text'>SUBTITULO</span>
-        <input type='text' value={subtitle} onInput={e => {
-            setSubtitle(e.target.value)
+        
+        <span className='upload-celebrity-text'>PAIS</span>
+        <input type='text' value={country} onInput={e => {
+            setCountry(e.target.value)
         }} className='upload-celebrity-input' placeholder='title' />
     
-        <span className='upload-celebrity-text'>ANIO</span>
-        <input type='number' value={year} onInput={e => {
-            setYear(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>RESUMEN</span>
-        <input type='text' value={summary} onInput={e => {
-            setSummary(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>DIRECTOR</span>
-        <input type='text' value={director} onInput={e => {
-            setDirector(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>Productor</span>
-        <input type='text' value={productor} onInput={e => {
-            setProductor(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>Escritores o guionistas</span>
-        <input type='text' value={writers} onInput={e => {
-            setWriters(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>Actores</span>
-        <input type='text' value={stars} onInput={e => {
-            setStars(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>Pais de origen</span>
-        <input type='text' value={productorCountry} onInput={e => {
-            setProductorCountry(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>Idioma</span>
+        <span className='upload-celebrity-text'>IDIOMA</span>
         <input type='text' value={language} onInput={e => {
             setLanguage(e.target.value)
         }} className='upload-celebrity-input' placeholder='title' />
     
-        <span className='upload-celebrity-text'>Fecha de estreno</span>
-        <input type='text' value={releaseDate} onInput={e => {
-            setReleaseDate(e.target.value)
+        <span className='upload-celebrity-text'>Biografia</span>
+        <input type='text' value={biography} onInput={e => {
+            setBiography(e.target.value)
         }} className='upload-celebrity-input' placeholder='title' />
     
-        <span className='upload-celebrity-text'>Duracion</span>
-        <input type='number' value={duration} onInput={e => {
-            setDuration(e.target.value)
+        <span className='upload-celebrity-text'>Fecha de nacimiento</span>
+        <input type='text' value={bornDate} onInput={e => {
+            setBornDate(e.target.value)
         }} className='upload-celebrity-input' placeholder='title' />
     
-        <span className='upload-celebrity-text'>Genero</span>
-        <input type='text' value={genre} onInput={e => {
-            setGenre(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>Presupuesto</span>
-        <input type='text' value={budget} onInput={e => {
-            setBudget(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
-    
-        <span className='upload-celebrity-text'>Ganancias</span>
-        <input type='text' value={earns} onInput={e => {
-            setEarns(e.target.value)
+        <span className='upload-celebrity-text'>GENEROS DE ACTUACION</span>
+        <input type='text' value={genres} onInput={e => {
+            setGenres(e.target.value)
         }} className='upload-celebrity-input' placeholder='title' />
 
-        <button onClick={() => {
-            const castCopied = [].concat(cast)
-            castCopied.push({})
-            setCast(castCopied)
-        }}>AGREGAR CAST</button>
-
-        
-        <CastPut entityType='items' entityId={celebrityData.data.id} data={cast} setCast={setCast} />
-        
-        <button onClick={() => {
-            const movieCopied = [].concat(relatedMovies)
-            movieCopied.push({})
-            setRelatedMovies(movieCopied)
-        }}>AGREGAR PELICULA O SERIE RELACIONADA</button>
-        <RelatedMoviesPut setRelatedMovies={setRelatedMovies} entityType='items' entityId={celebrityData.data.id} data={relatedMovies} />
+    <div className='update-cast-movie-container'>
 
         <Button 
-            text='Crear celebrity'
-            onClick ={handlePostItem}
+            text='+ AGREGAR ACTOR RELACIONADO'
+            onClick={() => {
+                const castCopied = [].concat(cast)
+                castCopied.push({})
+                setCast(castCopied)
+            }}
             variant='success'
+            className='upload-celebrity-button'
+        />
+
+        
+        <CastPut entityType='celebrities' entityId={celebrityData.data.id} data={cast} setCast={setCast} />
+        </div>
+
+        <div className='update-cast-movie-container'>
+            
+
+        <Button 
+            text='+ AGREGAR PELICULA O SERIE RELACIONADA'
+            onClick={() => {
+                const movieCopied = [].concat(relatedMovies)
+                movieCopied.push({})
+                setRelatedMovies(movieCopied)
+            }}
+            variant='success'
+            className='upload-celebrity-button'
+        />
+
+        <RelatedMoviesPut setRelatedMovies={setRelatedMovies} entityType='celebrities' entityId={celebrityData.data.id} data={relatedMovies} />
+        </div>
+
+        <Button 
+            text='Guardar Cambios'
+            onClick ={handlePostItem}
+            variant='primary'
             className='upload-celebrity-button'
         />
     </div>)

@@ -14,7 +14,7 @@ export default function BookmarkElement({idItem, isBookmarked, className}){
             itemId: id,
         }
         hit(endpoints.USERS.POST.ADD_WATCH_LIST(), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'AGREGADO A LA WATCHLIST'
         }}).then(result => {
             if(result.status == 204){
                 setIsBookMarked(!isCurrentBookmarked)

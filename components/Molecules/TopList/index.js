@@ -66,7 +66,7 @@ function TopYourRating({item}){
         item_id: item.id,
     }
     hit(endpoints.ITEMS.POST.POST_RATING(), {body,toasts: {
-        addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+        addToast, successMessage: 'PELICULA O SERIE PUNTUADA'
     }}).then(result => {
         if(result.status == 200){
 

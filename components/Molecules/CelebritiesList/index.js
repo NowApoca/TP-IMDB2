@@ -10,9 +10,9 @@ export default function UserTable({data}){
 
     if(!data) data = []
 
-  const deleteItem = (id) => {
-    hit(endpoints.ITEMS.DELETE(id), {body: {},toasts: {
-        addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+  const deleteCelebrity = (id) => {
+    hit(endpoints.CELEBRITIES.DELETE(id), {body: {},toasts: {
+        addToast, successMessage: 'CELEBRIDAD BORRADA'
     }}).then(result => {
         if(result.status == 204){
             window.location.reload()
@@ -37,13 +37,13 @@ export default function UserTable({data}){
             image: <img className='administration-item-image' src={element.image} ></img>,
             update: <Button 
               text='Editar'
-              onClick ={() => window.location = `/administration/update/item/${element.id}`}
+              onClick ={() => window.location = `/administration/update/celebrity/${element.id}`}
               variant='primary'
               className='configuration-form-button'
           />,
           delete: <Button 
             text='Borrar'
-            onClick ={() => deleteItem(element.id)}
+            onClick ={() => deleteCelebrity(element.id)}
             variant='danger'
             className='configuration-form-button'
         />,

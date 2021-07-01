@@ -13,7 +13,7 @@ module.exports = Object.freeze({
       ADD_WATCH_LIST: () => ({ method: "post", url: `/users/watchlist`, authentication: true }),
     },
     PATCH: {
-      PASSWORD: () => ({ method: "post", url: `/users/password`, authentication: true }),
+      PASSWORD: () => ({ method: "post", url: `/users/change/password`, authentication: true }),
     },
     PUT: {
       PUT: (id) => ({
@@ -27,7 +27,7 @@ module.exports = Object.freeze({
 
   ITEMS: {
     GET: {
-      GET: ( {limit,offset, orderBy, filter} ) => ({ method: "get", url: `/items?limit=${limit || 10}&offset=${offset || 0}&orderBy=${orderBy || ''}&filter=${filter || ''}`, authentication: true }),
+      GET: ( {limit,offset, orderBy, filter} ) => ({ method: "get", url: `/items?limit=${limit || 10}&offset=${offset || 0}&orderBy=${orderBy || ''}&filter=${filter || ''}` }),
       TOP: (filter) => ({ method: "get", url: `/items/top?filter=${filter}`, authentication: true }),
       GET_DATA: (id) => ({ method: "get", url: `/items/${id}`, authentication: true }),
     },
@@ -42,14 +42,14 @@ module.exports = Object.freeze({
 
   CELEBRITIES: {
     GET: {
-      GET: ({limit,offset, orderBy, filter}) => ({ method: "get", url: `/celebrities?limit=${limit || 10}&offset=${offset || 0}&orderBy=${orderBy || ''}&filter=${filter || ''}`, authentication: true }),
+      GET: ({limit,offset, orderBy, filter}) => ({ method: "get", url: `/celebrities?limit=${limit || 10}&offset=${offset || 0}&orderBy=${orderBy || ''}&filter=${filter || ''}` }),
       GET_DATA: (id) => ({ method: "get", url: `/celebrities/${id}`, authentication: true }),
     },
     POST: {
-      
+      CELEBRITY: () => ({ method: "post", url: `/celebrities` }),
     },
     PUT: {
-      
+      CELEBRITY: (id) => ({ method: "post", url: `/celebrities/edit/${id}` }),
     },
     DELETE: (id) => ({ method: "post", url: `/celebrities/${id}`, authentication: true }),
   },

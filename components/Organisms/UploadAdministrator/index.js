@@ -15,7 +15,7 @@ export default function UploadItem(){
             password
         }
         hit(endpoints.USERS.POST.ADMINISTRATOR(), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'ADMINISTRADOR CREADO'
         }}).then(result => {
             if(result.status == 201){
                 window.location = '/administration/items'
@@ -28,15 +28,15 @@ export default function UploadItem(){
         <span className='upload-celebrity-text'>USUARIO</span>
         <input value={user} onInput={e => {
             setUser(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='USUARIO' />
 
         <span className='upload-celebrity-text'>PASSWORD</span>
         <input value={password} onInput={e => {
             setPassword(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='PASSWORD' />
 
         <Button 
-            text='Crear celebrity'
+            text='Crear administrador'
             onClick ={handlePostItem}
             variant='success'
             className='upload-celebrity-button'

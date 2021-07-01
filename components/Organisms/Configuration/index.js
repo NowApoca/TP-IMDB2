@@ -17,10 +17,11 @@ export default function Configuration(){
             newPassword,
         }
         hit(endpoints.USERS.PATCH.PASSWORD(), { body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'CAMBIADA CON EXITO'
         }}).then(result => {
             if(result.status == 204){
                 window.location = '/'
+                localStorage.removeItem('ortAccessToken')
             }
         })
     }

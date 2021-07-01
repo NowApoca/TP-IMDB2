@@ -59,7 +59,7 @@ function getCelebritiesMoreVoted(setter){
 }
 
 
-export default function Home(){
+export default function Home({user}){
 
     const [itemsWatchList, setItemsWatchList] = useState([]);
     const [itemsMoreRecent, setItemsMoreRecent] = useState([]);
@@ -81,16 +81,10 @@ export default function Home(){
     return (
         <div>
             <LastPremieres lastPremieres={itemPremiers} className='home-loader-content' />
-            <Banner text='WATCH_LIST' size='title' />
-            <CarrouselHorizontal type='items' items={itemsWatchList} />
-            <Banner text='CELEBRITIES_BIRTHDAYS' size='title' />
-            <CelebrityCards celebrities={celebritiesBirthday} className='home-loader-content' />
-            <Banner text='MORE_RECENT' size='title' />
-            <CarrouselHorizontal type='items' items={itemsMoreRecent} />
-            <Banner text='CELEBRITIES_MORE_VOTED' size='title' />
-            <CelebrityCards celebrities={celebritiesMoreVoted} />
-            <Banner text='MORE_VOTED' size='title' />
-            <CarrouselHorizontal type='items' items={itemsMoreVoted} />
+            <Banner text='CELEBRIDADES' size='title' />
+            <CelebrityCards user={user} celebrities={celebritiesBirthday} className='home-loader-content' />
+            <Banner text='PELICULAS Y SERIES' size='title' />
+            <CarrouselHorizontal user={user} type='items' items={itemsMoreRecent} />
         </div>
     )
 }

@@ -23,8 +23,10 @@ module.exports = (app, agent) => {
             backendResponse.data
         )
     })
-    app.post(`/${baseUrl}/password`, async function (req, res) {
+    app.post(`/${baseUrl}/change/password`, async function (req, res) {
+        console.log("VENGO ACA 1")
         const backendResponse = await axios.patch(`${process.env.BACKEND_HOST}/${baseUrl}/password`,  req.body, { httpsAgent: agent, headers: {Authorization: req.headers.authorization} });
+        console.log("VENGO ACA 2")
         res.status(backendResponse.data.status).json(
             backendResponse.data
         )

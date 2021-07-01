@@ -44,7 +44,7 @@ export default function UploadItem(){
             earns,
         }
         hit(endpoints.ITEMS.POST.ITEM(), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'ITEM CREADO'
         }}).then(result => {
             if(result.status == 201){
                 window.location = '/administration/items'
@@ -57,12 +57,12 @@ export default function UploadItem(){
         <span className='upload-celebrity-text'>TITULO</span>
         <input type='text' value={title} onInput={e => {
             setTitle(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='TITULO' />
     
         <span className='upload-celebrity-text'>IMAGEN</span>
         <input type='text' value={image} onInput={e => {
             setImage(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='IMAGEN' />
 
         {
             image && <span className='upload-celebrity-text'>LA IMAGEN CORRESPONDIENTE ES: </span>
@@ -74,75 +74,75 @@ export default function UploadItem(){
         <span className='upload-celebrity-text'>SUBTITULO</span>
         <input type='text' value={subtitle} onInput={e => {
             setSubtitle(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='SUBTITULO' />
     
-        <span className='upload-celebrity-text'>ANIO</span>
+        <span className='upload-celebrity-text'>Año</span>
         <input type='number' value={year} onInput={e => {
             setYear(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Año' />
     
         <span className='upload-celebrity-text'>RESUMEN</span>
         <input type='text' value={summary} onInput={e => {
             setSummary(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='RESUMEN' />
     
         <span className='upload-celebrity-text'>DIRECTOR</span>
         <input type='text' value={director} onInput={e => {
             setDirector(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='DIRECTOR' />
     
         <span className='upload-celebrity-text'>Productor</span>
         <input type='text' value={productor} onInput={e => {
             setProductor(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Productor' />
     
         <span className='upload-celebrity-text'>Escritores o guionistas</span>
         <input type='text' value={writers} onInput={e => {
             setWriters(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Escritores o guionistas' />
     
         <span className='upload-celebrity-text'>Actores</span>
         <input type='text' value={stars} onInput={e => {
             setStars(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Actores' />
     
         <span className='upload-celebrity-text'>Pais de origen</span>
         <input type='text' value={productorCountry} onInput={e => {
             setProductorCountry(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Pais de origen' />
     
         <span className='upload-celebrity-text'>Idioma</span>
         <input type='text' value={language} onInput={e => {
             setLanguage(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Idioma' />
     
         <span className='upload-celebrity-text'>Fecha de estreno</span>
         <input type='text' value={releaseDate} onInput={e => {
             setReleaseDate(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Fecha de estreno' />
     
         <span className='upload-celebrity-text'>Duracion</span>
         <input type='number' value={duration} onInput={e => {
             setDuration(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Duracion' />
     
         <span className='upload-celebrity-text'>Genero</span>
         <input type='text' value={genre} onInput={e => {
             setGenre(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Genero' />
     
         <span className='upload-celebrity-text'>Presupuesto</span>
         <input type='text' value={budget} onInput={e => {
             setBudget(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Presupuesto' />
     
         <span className='upload-celebrity-text'>Ganancias</span>
         <input type='text' value={earns} onInput={e => {
             setEarns(e.target.value)
-        }} className='upload-celebrity-input' placeholder='title' />
+        }} className='upload-celebrity-input' placeholder='Ganancias' />
 
         <Button 
-            text='Crear celebrity'
+            text='Crear pelicula o serie'
             onClick ={handlePostItem}
             variant='success'
             className='upload-celebrity-button'

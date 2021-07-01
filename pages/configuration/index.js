@@ -9,7 +9,7 @@ export default function Title({user, t}) {
   return (
 <>
 <div className='page-container'>
-      <Header />
+      <Header user={user} />
       <Configuration />
 </div>
 <Footer />

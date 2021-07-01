@@ -17,8 +17,9 @@ export default function CarrouselRating({user, entityId, generalRatting, entityT
             entityId: entityId,
             "type":entityType
         }
+        console.log(body, 'ESTE BOOODY')
         hit(endpoints.RATINGS.POST.POST_RATING(), {t, body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'PUNTUACION POSTEADA'
         }}).then(result => {
             if(result.status == 200){
 
@@ -27,19 +28,21 @@ export default function CarrouselRating({user, entityId, generalRatting, entityT
     }
 
     return ( <div className='carrousel-rating-container'>
-        <Popup
-        info={{
-              title: 'POPUP_DELETE_USER_TITLE',
-              content: <StarsRate value={rating} setter={setRatting} />,
-            }}
-            type={'danger'}
-            onClick={() => {
-                handleOnRate(rating)
-            }}
-            Button={({onClick}) => {
-                return <RateButton onClick={onClick} rating={rating} />
-            }}
-        />
+        {
+            user && user.role != "NOT_USER" &&  <Popup
+            info={{
+                  title: 'POPUP_DELETE_USER_TITLE',
+                  content: <StarsRate value={rating} setter={setRatting} />,
+                }}
+                type={'danger'}
+                onClick={() => {
+                    handleOnRate(rating)
+                }}
+                Button={({onClick}) => {
+                    return <RateButton onClick={onClick} rating={rating} />
+                }}
+            />
+        }
         <Rating rating={generalRatting} />
     </div>)
 }

@@ -20,7 +20,7 @@ module.exports = (app, agent) => {
         )
     })
 
-    app.put(`/${baseUrl}/:id`, async function (req, res) {
+    app.post(`/${baseUrl}/edit/:id`, async function (req, res) {
         const {id} = req.params;
       const backendResponse = await axios.put(`${process.env.BACKEND_HOST}/${baseUrl}/${id}`,  req.body, { httpsAgent: agent, headers: {Authorization: req.headers.authorization} });
       res.status(backendResponse.data.status).json(

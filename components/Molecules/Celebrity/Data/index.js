@@ -4,7 +4,7 @@ import Moment from '../../../Atoms/Moment'
 export default function Data({data}){
     return (
         <div className='general-data-container'>
-            <Banner text='DETAILS' size='title' />
+            <Banner text='DETALLES' size='title' />
             <span className='general-data-text'>
                 {`${'Pais natal'}: ${data.country}`}
             </span>

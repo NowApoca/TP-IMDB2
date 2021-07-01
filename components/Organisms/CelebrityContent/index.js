@@ -3,7 +3,7 @@ import RelatedMovies from '../../Molecules/RelatedMovies'
 import Comments from '../../Molecules/Comments'
 import CelebrityData from '../../Molecules/Celebrity/Data'
 
-export default function TitleContent({celebrityData, t}) {
+export default function TitleContent({user, celebrityData, t}) {
   return (
     <div >
       

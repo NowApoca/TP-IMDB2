@@ -43,7 +43,7 @@ export default function CastPut({ data = [], setCast, entityType, entityId }) {
       hit(endpoints.LINKS.POST.LINK_WITH_CELEBRITY(entityId, entityType), {body: {
         celebrityIds: [element.celebrityId]
       },toasts: {
-        addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+        addToast, successMessage: 'CELEBRIDAD LINKEADA'
     }}).then(result => {
         if(result.status == 201){
 
@@ -57,7 +57,7 @@ export default function CastPut({ data = [], setCast, entityType, entityId }) {
     hit(endpoints.LINKS.POST.UNLINK_WITH_CELEBRITY(entityId, entityType), {body: {
       celebrityIds: [element.celebrityId]
     },toasts: {
-      addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+      addToast, successMessage: 'CELEBRIDAD DESVINCULADA'
   }}).then(result => {
       if(result.status == 201){
         const castCopy = [].concat(data)
@@ -84,13 +84,13 @@ export default function CastPut({ data = [], setCast, entityType, entityId }) {
           }
       </select>,
       save: <Button 
-      text='Bloquear'
+      text='Guardar'
       onClick ={() => saveCast(element)}
-      variant='danger'
+      variant='primary'
       className='configuration-form-button'
   />,
       erase: <Button 
-      text='Bloquear'
+      text='Borrar'
       onClick ={() => deleteCast(index, element)}
       variant='danger'
       className='configuration-form-button'

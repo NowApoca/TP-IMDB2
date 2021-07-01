@@ -41,6 +41,7 @@ export default function UploadItem({itemData, user}){
 
     const handlePostItem = () => {
         const body = {
+            title,
             image,
             subtitle,
             year,
@@ -58,7 +59,7 @@ export default function UploadItem({itemData, user}){
             earns,
         }
         hit(endpoints.ITEMS.PUT.ITEM(itemData.data.id), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'PELICULA O SERIE EDITADA'
         }}).then(result => {
             if(result.status == 204){
                 window.location = '/administration/update/item/' + itemData.data.id
@@ -68,7 +69,10 @@ export default function UploadItem({itemData, user}){
 
     return (<div className='upload-celebrity-container'>
     
-        <span className='upload-celebrity-text'>{title}</span>
+    <span className='upload-celebrity-text'>TITULO</span>
+        <input type='text' value={title} onInput={e => {
+            setTitle(e.target.value)
+        }} className='upload-celebrity-input' placeholder='Titulo' />
     
         <span className='upload-celebrity-text'>IMAGEN</span>
         <input type='text' value={image} onInput={e => {
@@ -152,26 +156,38 @@ export default function UploadItem({itemData, user}){
             setEarns(e.target.value)
         }} className='upload-celebrity-input' placeholder='title' />
 
-        <button onClick={() => {
-            const castCopied = [].concat(cast)
-            castCopied.push({})
-            setCast(castCopied)
-        }}>AGREGAR CAST</button>
-
-        
-        <CastPut entityType='items' entityId={itemData.data.id} data={cast} setCast={setCast} />
-        
-        <button onClick={() => {
-            const movieCopied = [].concat(relatedMovies)
-            movieCopied.push({})
-            setRelatedMovies(movieCopied)
-        }}>AGREGAR PELICULA O SERIE RELACIONADA</button>
-        <RelatedMoviesPut setRelatedMovies={setRelatedMovies} entityType='items' entityId={itemData.data.id} data={relatedMovies} />
-
+<div className='update-cast-movie-container'>
         <Button 
-            text='Crear celebrity'
-            onClick ={handlePostItem}
+            text='+ AGREGAR PELICULA O SERIE RELACIONADA'
+            onClick={() => {
+                const castCopied = [].concat(cast)
+                castCopied.push({})
+                setCast(castCopied)
+            }}
             variant='success'
+            className='upload-celebrity-button'
+        />
+        <CastPut entityType='items' entityId={itemData.data.id} data={cast} setCast={setCast} />
+        </div>
+
+        
+        <div className='update-cast-movie-container'>
+        <Button 
+            text='+ AGREGAR PELICULA O SERIE RELACIONADA'
+            onClick={() => {
+                const movieCopied = [].concat(relatedMovies)
+                movieCopied.push({})
+                setRelatedMovies(movieCopied)
+            }}
+            variant='success'
+            className='upload-celebrity-button'
+        />
+        <RelatedMoviesPut setRelatedMovies={setRelatedMovies} entityType='items' entityId={itemData.data.id} data={relatedMovies} />
+        </div>
+        <Button 
+            text='Guardar cambios'
+            onClick ={handlePostItem}
+            variant='primary'
             className='upload-celebrity-button'
         />
     </div>)

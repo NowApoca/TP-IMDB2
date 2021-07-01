@@ -7,7 +7,7 @@ export default function Root({user, t}) {
 <>
 <div className='page-container'>
       <Header user={user} />
-      <Home />
+      <Home user={user} />
 </div>
 <Footer />
 </>

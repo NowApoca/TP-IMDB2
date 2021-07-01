@@ -26,6 +26,7 @@ export default function Login({user, t}) {
   return (
       <>
         <div className='login-container'>
+            <h1 style={{color: 'blue'}}>REGISTRARSE</h1>
             <div>
                 <span className='upload-celebrity-text'>ID</span>
                 <input className='upload-celebrity-input' onInput={(e) => {

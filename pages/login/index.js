@@ -27,17 +27,18 @@ export default function Login({user, t}) {
   return (
       <>
         <div className='login-container'>
+            <h1 style={{color: 'blue'}}>INGRESAR</h1>
             <div>
                 <span className='upload-celebrity-text'>ID</span>
                 <input className='upload-celebrity-input' onInput={(e) => {
                     setId(e.target.value)
-                }} placeholder='title' />
+                }} placeholder='Usuario' />
             </div>
             <div>
                 <span className='upload-celebrity-text'>PASSWORD</span>
-                <input className='upload-celebrity-input' onInput={(e) => {
+                <input type='password' className='upload-celebrity-input' onInput={(e) => {
                     setPassword(e.target.value)
-                }} placeholder='title' />
+                }} placeholder='Contraseña' />
             </div>
             <Button 
               text='Ingresar'

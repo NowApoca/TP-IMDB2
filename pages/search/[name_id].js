@@ -55,16 +55,18 @@ export default function Title({user, t}) {
 
 <>
 <div className='page-container'>
-      <Header nameId={name_id} />
+      <Header user={user} nameId={name_id} />
       <FilterSearchResult 
         label={'movies'}
         type={'movies'}
         data={movies}
+        user={user}
         />
       <FilterSearchResult 
         label={'celebrities'}
         type={'celebrities'}
         data={celebrities}
+        user={user}
         />
 </div>
 <Footer />

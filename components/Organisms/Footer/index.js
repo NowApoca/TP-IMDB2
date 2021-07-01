@@ -22,7 +22,7 @@ export default function Footer(){
             </div>
             <div className='footer-about-us'>
                 <span className='footer-about-us-text'>
-                    API
+                    SPONSORED BY NowApoca
                 </span>
                 <Headset className='footer-about-us-icon' />
             </div>

@@ -1,7 +1,7 @@
 import CelebrityCard from '../../Molecules/CelebrityCard'
 import Loader from '../../Molecules/CelebrityCard/Loader'
 
-export default function CelebrityCards({celebrities = []}){
+export default function CelebrityCards({celebrities = [], user}){
     if(celebrities == null) celebrities = []
     let newArrCelebrities = celebrities.concat([])
     if(celebrities){
@@ -14,7 +14,7 @@ export default function CelebrityCards({celebrities = []}){
                 celebrities?
                 newArrCelebrities.map(celebrity => {
                     return <div className='celebrities-item-container'>
-                        <CelebrityCard celebrity={celebrity} />
+                        <CelebrityCard user={user} celebrity={celebrity} />
                     </div>
                 }) : <>
                     <Loader amount={3} className='celebrities-item-load-container' />

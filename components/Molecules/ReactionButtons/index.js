@@ -40,7 +40,7 @@ function Reaction({Symbol, pressed, amount, reactionType, idReaction, idComment,
             reactionType
         }
         hit(endpoints.COMMENTS.POST.REACT(entityType, idComment), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'REACCIONADO'
         }}).then(result => {
             if(result.status == 200){
                 setCurrentAmount(isPressed? currentAmount-1 : currentAmount+1)

@@ -73,3 +73,10 @@ body {
   width: 30%;
   height: auto;
 }
+
+.login-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

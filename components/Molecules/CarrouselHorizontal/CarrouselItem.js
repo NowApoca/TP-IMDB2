@@ -5,7 +5,8 @@ import CarrouselRating from '../CarrouselRating'
 import {useState} from 'react'
 import { useToasts } from 'react-toast-notifications'
 
-export default function CarrouselItem({item, type, t}){
+export default function CarrouselItem({item, type, t, user}){
+
 
     const [rating, setRatting] = useState(item.userRating)
 
@@ -16,7 +17,7 @@ export default function CarrouselItem({item, type, t}){
             id,
         }
         hit(endpoints.ITEMS.POST.ADD_WATCH_LIST(), {body,toasts: {
-            addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+            addToast, successMessage: 'AGREGADO A LA WATCHLIST'
         }}).then(result => {
             if(result.status == 204){
                 setIsBookMarked(!isBookmarked)
@@ -27,7 +28,7 @@ export default function CarrouselItem({item, type, t}){
     return (
         <div className='carrousel-item-container'>
             {
-                type != 'users' && <Bookmark isBookmarked={item.isBookmarked} idItem={item.id} />
+                type != 'users' && user && user.role != 'NOT_USER' && <Bookmark user={user} isBookmarked={item.isBookmarked} idItem={item.id} />
             }
             <img onClick={() => {
                 window.location = `/title/${item.id}`
@@ -36,7 +37,7 @@ export default function CarrouselItem({item, type, t}){
                 src={item.image}
             />
             {
-                type != 'users' && <CarrouselRating entityId={item.id}
+                type != 'users' && <CarrouselRating entityType='items' user={user} entityId={item.id}
                     generalRatting={Math.round(item.rating * 10) / 10}
                     rating={rating} setRatting={setRatting}
                 />

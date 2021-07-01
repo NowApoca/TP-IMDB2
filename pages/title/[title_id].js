@@ -30,9 +30,9 @@ export default function Title({user, t}) {
   return (
 <>
 <div className='page-container'>
-      <Header />
+      <Header user={user} />
       {
-        itemData && <TitleContent titleData={itemData} />
+        itemData && <TitleContent user={user} titleData={itemData} />
       }
 </div>
 <Footer />

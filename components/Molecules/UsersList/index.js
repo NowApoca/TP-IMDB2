@@ -12,7 +12,7 @@ export default function UserTable({data}){
 
   const blockUser = (id) => {
     hit(endpoints.USERS.DELETE(id), {body: {},toasts: {
-        addToast, successMessage: 'POST_ROLE_SUCCESSFUL'
+        addToast, successMessage: 'USUARIO BLOQUEADO'
     }}).then(result => {
         if(result.status == 204){
             window.location.reload()
